@@ -1,0 +1,147 @@
+/************************************
+** 新規にタイトルを作成
+**
+************************************/
+.wgt-heading__inner {
+  display: none;
+}
+.wgt-heading__inner_sub {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 190px;
+/* もし下線が欲しい場合は有効化すること */
+/*	border-bottom: 1px solid #d4d1cf; */
+  text-align: center;
+}
+
+/************************************
+** パノラマ
+**
+************************************/
+.tour {
+  margin-top: 10px;
+  max-width: 518px;
+}
+.tour p {
+  text-align: left;
+  padding: 5px 0;
+  color: #777;
+  font-size: 11px;
+}
+div#pano {
+  width: 100%;
+  height: 180px
+}
+
+/************************************
+** 文字にライン（下線）を引くタグ
+** 本文　【<strong class="marker">強調します</strong>】
+** 注意文【<strong class="marker_c ">強調します</strong>】
+**
+************************************/
+.marker {
+  background-image: linear-gradient(transparent 60%,#feb5c9 50%);
+  font-weight: bold;
+  padding: 0 5px;
+}
+.marker_c {
+  background-image: linear-gradient(transparent 60%,rgba(254, 181, 201, 0.45) 50%);
+  padding: 0 1px;
+}
+
+/************************************
+** その他
+**
+************************************/
+h4 {
+  margin: 0px;
+}
+p.comment {
+  margin: 0px;
+  font-weight: normal;
+}
+table {
+  border-top-style: none;
+  border-collapse: collapse;
+}
+table th {
+  width: 200px;
+}
+/* hrタグ有効化 */
+hr.line {
+  display: block;
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid #DCDCDC;
+}
+/* フォーム内のタイトル非表示 */
+.wgt-form__heading {
+  display: none;
+}
+
+/************************************
+** モバイル対応
+**
+************************************/
+@media screen and (max-width: 768px) {
+  /* brタグを無効化 */
+  #seminar_form br {
+    display: none;
+  }
+  /* パノラマをモバイル向けに調整 */
+  .tour {
+    max-width: 100%
+  }
+  div#pano {
+    width: 100%;
+    height: 100%;
+  }
+  iframe.pano {
+    width: 100%;
+    height: 100%;
+  }
+  /* テーブルをモバイル向けに調整 */
+  #seminar_form table,
+  #seminar_form table th,
+  #seminar_form table td {
+    border: none;
+  }
+  #seminar_form table th,
+  #seminar_form table td {
+    display: block;
+    width: 100%;
+  }
+  #seminar_form table th {
+    background: #d0d0d0;
+  }
+  #seminar_form table th.header {
+    background: #fff;
+  }
+  #seminar_form table td.header {
+    padding: 0px;
+  }
+  /* その他モバイル向けに調整 */
+  #seminar_form {
+    margin-right: 20px;
+  }
+  iframe.googlemap {
+    width: 100%;
+  }
+}

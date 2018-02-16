@@ -1,0 +1,240 @@
+/************************************
+** 細かい調整
+**
+************************************/
+p, .wgt-heading {
+  margin: 0;
+}
+/* 注意文の文字サイズ */
+.label_message {
+  font-size: 14px;
+}
+/* フォームのpadding調整 */
+.wgt-form .wgt-form__body {
+  padding: 15px 30px;
+}
+/* 各種非表示箇所 */
+.base-header, .base-footer, .mod-breadcrumbs, .wgt-form__head {
+  display: none;
+}
+/* ラベルのデザイン */
+article.resp li.label {
+  background-color: #f6f6f6;
+  border-left: 6px solid #ccc;
+  font-size: 22px;
+  margin: 30px 0 15px 0;
+  padding: .5em .75em;
+}
+/* 来月ボタン */
+.next_month {
+  font-size: 10px;
+}
+/* 強制非表示 */
+.display_none_imp {
+  display: none !important;
+}
+/************************************
+** 文字にライン（下線）を引くタグ
+** 本文　【<strong class="marker">強調します</strong>】
+** 注意文【<strong class="marker_c ">強調します</strong>】
+**
+************************************/
+.marker {
+  background-image: linear-gradient(transparent 60%,#feb5c9 50%);
+  font-weight: bold;
+  padding: 0 5px;
+}
+.marker_c {
+  background-image: linear-gradient(transparent 60%,rgba(254, 181, 201, 0.45) 50%);
+  padding: 0 1px;
+}
+/************************************
+** パスワード発行
+**
+************************************/
+.brnone {
+  width: 400px;
+}
+.brnone table {
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+.brnone td {
+  border-bottom: none;
+  border-right: solid 1px #666;
+  color: #666;
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.brnone td:last-child {
+  border-right: none;
+}
+.brnone br {
+  display: none;
+}
+/************************************
+** ボタン
+**
+************************************/
+.button {
+  width: 200px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: #49a9d4;
+  border-radius: 5px;
+  box-shadow: 2px 2px #1a6ea0;
+  text-shadow: 0 -1px #1a6ea0;
+}
+/************************************
+** アカウントごとの対応
+**
+************************************/
+article.resp form li.account_paid.clr,
+article.resp form li.account_free.clr,
+article.resp form li.account_fee.clr {
+  margin: 0;
+}
+.account_paid, .account_free, .account_num,
+.account_fee, .account_sum {
+  border-left: 6px solid rgba(9, 9, 9, 1);
+  padding: .25em 0 .25em .75em;
+}
+.account_num, .account_sum {
+  border-bottom: 1px solid rgba(9, 9, 9, 1);
+}
+/************************************
+** 製品ごとの対応
+**
+************************************/
+article.resp form li.display_none.clr {
+  display: none;
+}
+article.resp form li.lead_fee.clr,
+article.resp form li.sales_fee.clr,
+article.resp form li.teleapo_fee.clr,
+article.resp form li.web_fee.clr,
+article.resp form li.tracking_fee.clr,
+article.resp form li.cti_fee.clr,
+article.resp form li.scan_fee.clr {
+  margin: 0;
+}
+.lead_fee, .lead_pln,
+.sales_fee, .sales_pln,
+.teleapo_fee, .teleapo_pln,
+.web_fee, .web_pln,
+.tracking_fee, .tracking_pln,
+.cti_fee, .cti_pln,
+.scan_fee, .scan_pln {
+  border-left: 6px solid rgba(9, 9, 9, 1);
+  padding: .25em 0 .25em .75em;
+}
+.lead_pln, .sales_pln, .teleapo_pln,
+.web_pln, .tracking_pln, .cti_pln, .scan_pln {
+  border-bottom: 1px solid rgba(9, 9, 9, 1);
+}
+.lead_fee, .lead_pln {border-left-color: rgba(142, 168, 0, 1);}
+.lead_pln {border-bottom-color: rgba(142, 168, 0, 1);}
+.sales_fee, .sales_pln {border-left-color: rgba(13, 123, 166, 1);}
+.sales_pln {border-bottom-color: rgba(13, 123, 166, 1);}
+.teleapo_fee, .teleapo_pln {border-left-color: rgba(68, 157, 49, 1);}
+.teleapo_pln {border-bottom-color: rgba(68, 157, 49, 1);}
+.web_fee, .web_pln {border-left-color: rgba(180, 108, 213, 1);}
+.web_pln {border-bottom-color:  rgba(180, 108, 213, 1);}
+.tracking_fee, .tracking_pln {border-left: 6px solid rgba(233, 138, 75, 1);}
+.tracking_pln {border-bottom-color:  rgba(233, 138, 75, 1);}
+.cti_fee, .cti_pln {border-left: 6px solid rgba(0, 196, 196, 1);}
+.cti_pln {border-bottom-color:  rgba(0, 196, 196, 1);}
+.scan_fee, .scan_pln {border-left: 6px solid rgba(206, 53, 53, 1);}
+.scan_pln {border-bottom-color:  rgba(206, 53, 53, 1);}
+/************************************
+** 製品選択
+**
+************************************/
+.service br {
+  display: none;
+}
+.service {
+  margin-bottom: 30px;
+  text-align: center;
+  user-select: none; /* CSS3 */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10以降 */
+}
+#lead {background-color: rgba(142, 168, 0, 1);}
+#sales {background-color: rgba(13, 123, 166, 1);}
+#teleapo {background-color: rgba(68, 157, 49, 1);}
+#web {background-color: rgba(180, 108, 213, 1);}
+#tracking {background-color: rgba(233, 138, 75, 1);}
+#cti {background-color: rgba(0, 196, 196, 1);}
+#scan{background-color: rgba(206, 53, 53, 1);}
+/* 基本設定 */
+.service_button {
+  font-size: 10px;
+  display: inline-block;
+  width: 65px;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 30px;
+  outline: none;
+  margin: 10px;
+}
+.service_button::before,
+.service_button::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.service_button,
+.service_button::before,
+.service_button::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+/* エフェクト */
+.service_button {
+  position: relative;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 28px;
+  -webkit-transition: none;
+  transition: none;
+  box-shadow: 0 4px 4px #8e8e8e;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+.service_button:hover {
+  box-shadow: 0 4px 4px #8e8e8e;
+}
+.service_button:active {
+  top: 3px;
+  box-shadow: 0 1px 1px #8e8e8e;
+}
+/************************************
+** 自動計算箇所
+**
+************************************/
+article.resp .account_num input[type="text"],
+article.resp .account_sum input[type="text"],
+article.resp .service_fee_sum input[type="text"],
+article.resp .saaske_fee_sum input[type="text"],
+article.resp .saaske_tax_sum input[type="text"] {
+  border: #fff;
+}
