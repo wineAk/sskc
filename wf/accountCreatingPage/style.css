@@ -14,8 +14,12 @@ p, .wgt-heading {
   padding: 15px 30px;
 }
 /* 各種非表示箇所 */
-.base-header, .base-footer, .mod-breadcrumbs, .wgt-form__head {
+.base-header, .base-footer, .mod-breadcrumbs, .wgt-form__head, .header, .mod-product, .footer, #pagetop {
   display: none;
+}
+/* フォームの横幅 */
+.base-page {
+  min-width: auto;
 }
 /* ラベルのデザイン */
 article.resp li.label {
