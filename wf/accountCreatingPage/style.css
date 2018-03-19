@@ -18,7 +18,7 @@ p, .wgt-heading {
   display: none;
 }
 /* フォームの横幅 */
-.base-page {
+div.base-page {
   min-width: auto;
 }
 /* ラベルのデザイン */
