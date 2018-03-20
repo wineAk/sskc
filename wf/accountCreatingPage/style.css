@@ -20,6 +20,7 @@ p, .wgt-heading {
 /* フォームの横幅 */
 div.base-page {
   min-width: auto;
+  margin: 0;
 }
 /* ラベルのデザイン */
 article.resp li.label {
