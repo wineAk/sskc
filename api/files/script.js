@@ -1,7 +1,8 @@
 $(function(){
-  $('#execute').click(function(){
+  $('input[type=button]').on('click', function(){
+    var id = $(this).attr('id');
     $.ajax({
-      url: 'api.php',
+      url: 'api_'+id+'.php',
       type: 'post',
       dataType: 'json',
       data: {
