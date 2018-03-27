@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="files/icon.png">
+  <link rel="stylesheet" href="files/style.css">
+  <title>APIテスト</title>
+</head>
+<body>
+  <div class="box">
+    <h3>設定</h3>
+    <table>
+      <tr>
+        <td>APIキー</td>
+        <td><input type="text" id="apikey" value=""></td>
+      </tr>
+      <tr>
+        <td>APIトークン</td>
+        <td><input type="text" id="token" value=""></td>
+      </tr>
+      <tr>
+        <td>保存番号</td>
+        <td><input type="text" id="number" value=""></td>
+      </tr>
+      <tr>
+        <td class="right" colspan="2"><input type="button" id="execute" value="送信"></td>
+      </tr>
+    </table>
+    <h3>結果</h3>
+    <table>
+      <tr>
+        <td><span id="result_text">（結果）</span></td>
+        <td><textarea id="result_json"></textarea></td>
+      </tr>
+    </table>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="files/script.js"></script>
+</body>
+</html>
