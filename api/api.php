@@ -18,6 +18,5 @@
   ];
   $context = stream_context_create($options);
   $contents = file_get_contents("https://api.saaske.com/v1/lead/list", false, $context);
-  $contentsJsn = json_decode($contents);
   echo $contents;
 ?>
