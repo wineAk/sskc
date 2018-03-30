@@ -1,14 +1,20 @@
 $(function(){
   $('input[type=button]').on('click', function(){
-    var id = $(this).attr('id');
+    var cmd = $(this).data('cmd');
+    var mtd = $(this).data('mtd');
+    var key = $('#apikey').val();
+    var tkn = $('#token').val();
+    var num = $('#number').val();
     $.ajax({
-      url: 'api_'+id+'.php',
+      url: 'api.php',
       type: 'post',
       dataType: 'json',
       data: {
-        apikey: $('#apikey').val(),
-        token: $('#token').val(),
-        number: $('#number').val(),
+        command: cmd,
+        method: mtd,
+        apikey: key,
+        token: tkn,
+        number: num,
       },
     })
     .done(function(response){
