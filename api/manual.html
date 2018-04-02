@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="files/icon.png">
+  <link rel="stylesheet" href="files/style.css">
+  <title>サスケAPI - 簡易マニュアル</title>
+  <style>
+    img {
+      width: auto;
+      height: 250px;
+      border: 1px solid #000;
+    }
+    .flex {
+      display: flex;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>サスケAPI - デモページ</h2>
+    <span><a href="demo.html" target="_blank">デモページを開く</a></span>
+
+    <h2>使い方</h2>
+    <div class="flex">
+      <span>①<br>「リストの取得」の「curl」をクリックすることで「検索条件の保存リスト」＆「保存番号」を一覧で取得できる。</span>
+      <img src="files/image1.png">
+    </div>
+    <div class="flex">
+      <span>②<br>「saved_number」の横に書かれている数字が「保存番号」になるので、これをコピーする。</span>
+      <img src="files/image2.png">
+    </div>
+    <div class="flex">
+      <span>③<br>コピーした数字を「保存番号」へ貼り付けて「データの取得」の「curl」をクリックすることで「検索条件にヒットする顧客一覧」情報が取得できる。</span>
+      <img src="files/image3.png">
+    </div>
+
+    <h2>注意点</h2>
+    <ul>
+      <li>①と③で表示されている英字については「APIドキュメント＞サスケ Lead＞レスポンス」に全て説明されています。</li>
+      <li>保存番号「45197」のように500件を超えるデータは501件移行切り捨てで表示される。また社内のWi-Fi下でも取得に5秒ぐらいかかるので注意すること。</li>
+    </ul>
+    <ul>
+      <li>「curl」は「カール」と読みます。【<a href="https://ja.wikipedia.org/wiki/CURL" target="_blank">cURL - Wikipedia</a>】</li>
+      <li>curlとfile_get_contentsの違いは「データの取得方法が少し違うだけ」です。サスケには関係ありません。</li>
+    </ul>
+  </div>
+</body>
+</html>
