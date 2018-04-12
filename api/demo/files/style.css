@@ -65,7 +65,6 @@ select {
   border: 1px solid #939393;
   border-radius: 0.2em;
   box-shadow: 0 2px 0 #AAA;
-  margin: auto 15px;
   position: relative;
 }
 .select:after {
@@ -80,10 +79,8 @@ select {
   width: 1.8em;
 }
 .button {
-  background: #1abc9c;
   border-radius: 4px;
-  box-shadow: 0 3px 0 #0e8c73;
-  color: #fff;
+  font-size: 12px;
   line-height: 52px;
   position: relative;
   text-align: center;
@@ -93,12 +90,23 @@ select {
   width: 120px;
 }
 .button:hover {
-  background: #31c8aa;
-  box-shadow: 0 3px 0 #23a188;
+  /*background: #31c8aa;
+  box-shadow: 0 3px 0 #23a188;*/
+  opacity: 0.8;
 }
-.button:active {
+div.button:active {
   box-shadow: none;
   top: 3px;
+}
+.button.red {
+  background: #F95E25;
+  box-shadow: 0 3px 0 #A04241;
+  color: #fff;
+}
+.button.green {
+  background: #1abc9c;
+  box-shadow: 0 3px 0 #0e8c73;
+  color: #fff;
 }
 .box {
   margin: 10px auto;
@@ -109,13 +117,17 @@ select {
   align-items: center;
   justify-content: flex-end;
 }
+.box_setting > div {
+  margin: auto 10px;
+}
 .box_setting > div:first-child {
   display: flex;
   flex-direction: column;
+  margin-left: 0;
   text-align: right;
 }
 .box_setting > div:last-child {
-  margin: 0px;
+  margin-right: 0px;
 }
 .box_setting span {
   margin-right: 10px;

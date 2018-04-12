@@ -2,8 +2,9 @@ $(function(){
   // 初回にGETで検索条件リストを取得
   apiProcess("GET");
   // ボタンクリック時にPOSTで顧客リストを取得
-  $("#post").on("click", function(){
-    apiProcess("POST");
+  $(".box_setting .button").on("click", function(){
+    let method = $(this).data("method");
+    apiProcess(method);
   });
 });
 // APIの取得関数
@@ -45,11 +46,13 @@ function apiProcess(mtd){
     }
   })
   .fail(function(){
-    result("失敗しました", "検索条件の保存を行ったアカウントではありません。")
+    console.log(arguments);
+    result("失敗しました", "コンソールログをご確認ください。");
   });
 }
 // プルダウンの生成関数
 function pulldownProcess(obj){
+  $("#list").empty();
   pulldownCreate(obj.all_customers, "全顧客一覧");
   pulldownCreate(obj.history_group, "履歴グループ");
   pulldownCreate(obj.lead_source, "リードソース");
