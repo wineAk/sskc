@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="files/icon.png">
+  <link rel="stylesheet" href="files/style.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+  <title>サスケAPI - デモページ</title>
+</head>
+<body>
+  <header>
+    <div class="box">
+      <h1>サスケAPI - デモページ</h1>
+    </div>
+  </header>
+  <div class="box box_setting">
+    <div>
+      <div><span>APIキー</span><input type="text" id="apikey" value="74YUjyUo526clrGv63QpMQa0ceMiL8R3z8qbOMZ0"></div>
+      <div><span>トークン</span><input type="text" id="token" value="020f92cf15635f9ce8e5c6b43b4911a8d980b94611bf5886"></div>
+    </div>
+    <div class="select"><select id="list"></select></div>
+    <div id="post" class="button" data-cmd="curl" data-mtd="POST">取得する</div>
+  </div>
+  <div class="box box_title">
+    <h2>
+      <span id="target_name">リスト名</span>
+      <span id="target_save_name">検索条件の保存名</span>
+    </h2>
+  </div>
+  <div class="box box_table" id="target">
+    <div class="title">
+      <div class="sskc">サスケ<br>顧客番号</div>
+      <div class="company">会社名</div>
+      <div class="tel">電話番号</div>
+      <div class="city">都道府県</div>
+      <div class="name">名前</div>
+      <div class="link">リンク</div>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="files/script.js"></script>
+</body>
+</html>
