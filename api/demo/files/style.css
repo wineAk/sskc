@@ -16,6 +16,9 @@ body {
     sans-serif;
   margin: 0;
 }
+body > div {
+  display: none !important;
+}
 input, button, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
