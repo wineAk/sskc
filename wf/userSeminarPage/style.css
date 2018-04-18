@@ -131,10 +131,12 @@ hr.line {
   #seminar_form table th {
     background: #d0d0d0;
   }
-  #seminar_form table th.header {
+  #seminar_form table th.header,
+  #seminar_form table th.table-header {
     background: #fff;
   }
-  #seminar_form table td.header {
+  #seminar_form table td.header,
+  #seminar_form table td.table-header {
     padding: 0px;
   }
   /* その他モバイル向けに調整 */
