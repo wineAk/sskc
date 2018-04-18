@@ -95,6 +95,16 @@ hr.line {
 .wgt-form__heading {
   display: none;
 }
+/* liのドットを非表示 */
+.none-li-dot {
+  list-style: none;
+  padding: 0px;
+}
+/* 問い合わせ */
+.table-info {
+  font-weight: normal;
+  border-bottom-style: none;
+}
 
 /************************************
 ** モバイル対応
