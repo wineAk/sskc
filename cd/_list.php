@@ -2,13 +2,14 @@
   // ディレクトリ名
   $master  = "apk";
   $develop = "apk_d";
+  $sg = "apk_sg";
   // ファイル一覧を取得
   function getApkList($dir){
     $res_dir = opendir($dir);
     while(false !== ($file_list[] = readdir($res_dir)));
     closedir($res_dir); // ディレクトリハンドルを閉じる
     sort($file_list); // ソート
-    $file_list = array_diff($file_list, array(".", "..", "desktop.ini")); // 削除実行
+    $file_list = array_diff($file_list, array(".", "..", "desktop.ini", ".gitkeep")); // 削除実行
     $file_list = array_values($file_list); // indexを詰める
     return $file_list;
   }

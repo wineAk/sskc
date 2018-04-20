@@ -12,7 +12,7 @@
 ?>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="files/icon.png">
-<title>Cloud Scan QRコード</title>
+<title>Cloud Scan アプリ一覧</title>
 <div id="qrpage">
   <h2>Cloud Scanのダウンロード</h2>
   <ul>
@@ -47,6 +47,20 @@
     foreach($file_list as $file_name){
       if(is_file("{$dir}{$file_name}")){
         print "<li><a href=\"{$develop}/{$file_name}\">{$file_name}</a></li>";
+      }
+    }
+  ?></ul>
+  <h3>SGファイル</h3>
+  <p><?php
+    $dir = "./{$sg}/";
+    $file_list = getApkList($dir);
+    list($file_name, $file_last) = getApkLast($file_list);
+    print "最新バージョン（<a href=\"{$sg}/{$file_last}\">{$file_name}</a>）";
+  ?></p>
+  <ul><?php
+    foreach($file_list as $file_name){
+      if(is_file("{$dir}{$file_name}")){
+        print "<li><a href=\"{$sg}/{$file_name}\">{$file_name}</a></li>";
       }
     }
   ?></ul>
