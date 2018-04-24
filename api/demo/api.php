@@ -26,10 +26,10 @@
   curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($curl, CURLOPT_HEADER, true);
+  // responseからheaderを削除し、bodyを返す
   $response = curl_exec($curl);
   $header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
-  curl_close($curl);
-  // responseからheaderを削除し、bodyを返す
   $body = substr($response, $header_size);
   echo $body;
+  curl_close($curl);
 ?>
