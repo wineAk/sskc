@@ -19,6 +19,9 @@ body {
 body > div {
   display: none !important;
 }
+a {
+  color: inherit;
+}
 input, button, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -62,6 +65,9 @@ select {
   padding: 0.6em 2.4em 0.6em 0.6em;
   vertical-align: middle;
   width: 150px;
+}
+select::-ms-expand {
+  display: none;
 }
 .select {
   background: #fff;
@@ -172,4 +178,29 @@ div.button:active {
 .link svg {
   fill: #F85A3E;
   width: 20px;
+}
+.alert_text {
+  background-color: #ffeffe;
+  padding: 10px;
+  color: #C25338;
+  border: 1px solid #D4440D;
+  line-height: 1.5;
+  clear: both;
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  background-image: url(https://wineak.github.io/sskc/wf/onlineNegotiationManual/alert.png);
+}
+.alert_text span {
+  filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='https://wineak.github.io/sskc/wf/onlineNegotiationManual/alert.png', sizingMethod='scale');
+  width: 48px;
+  height: 48px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  text-indent: -9999px;
+  float: left;
+  visibility: hidden;
+}
+.display_none {
+  display: none;
 }
