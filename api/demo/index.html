@@ -25,9 +25,13 @@
       </p>
     </div>
     <div class="box box_setting">
-      <div>
-        <div><span>APIキー</span><input type="text" id="apikey" value="74YUjyUo526clrGv63QpMQa0ceMiL8R3z8qbOMZ0"></div>
-        <div><span>トークン</span><input type="text" id="token" value="020f92cf15635f9ce8e5c6b43b4911a8d980b94611bf5886"></div>
+      <div class="radio" id="switch">
+        <div><input type="radio" id="url_main" name="url_api" value="https://api.saaske.com/v1/lead/list" checked><label for="url_main">メイン</label></div>
+        <div><input type="radio" id="url_test" name="url_api" value="https://api.saaske.com/v1/test/lead/list"><label for="url_test">テスト</label></div>
+      </div>
+      <div class="text">
+        <div><input type="text" id="apikey" value="74YUjyUo526clrGv63QpMQa0ceMiL8R3z8qbOMZ0"><span>APIキー</span></div>
+        <div><input type="text" id="token" value="020f92cf15635f9ce8e5c6b43b4911a8d980b94611bf5886"><span>APIトークン</span></div>
       </div>
       <div class="select"><select id="list"></select></div>
       <div class="button red" data-method="GET">検索条件を取得</div>

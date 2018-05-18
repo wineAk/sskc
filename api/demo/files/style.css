@@ -27,11 +27,45 @@ input, button, textarea, select {
   -moz-appearance: none;
   appearance: none;
 }
-input {
+input[type="text"] {
   border: 1px solid #939393;
-  border-radius: 0.2em;
+  border-radius: 3px;
   padding: 2px 4px;
+  width: 180px;
 }
+input[type="radio"] {
+  display: none;
+}
+label {
+  position: relative;
+  display: inline-block;
+  padding: 3px 3px 3px 20px;
+  cursor: pointer;
+}
+label::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: -8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+}
+input[type="radio"]:checked + label::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  background: #3498db;
+  border-radius: 100%;
+}
+
 header {
   background: #fff;
   border-top: 1px solid #ccc;
@@ -59,10 +93,10 @@ select {
   box-sizing: content-box;
   color: inherit;
   font-size: 1rem;
-  height: 25px;
+  height: 32px;
   margin: 0;
   outline: none;
-  padding: 0.6em 2.4em 0.6em 0.6em;
+  padding: 9px 38px 9px 9px;
   vertical-align: middle;
   width: 150px;
 }
@@ -72,9 +106,10 @@ select::-ms-expand {
 .select {
   background: #fff;
   border: 1px solid #939393;
-  border-radius: 0.2em;
-  box-shadow: 0 2px 0 #AAA;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #AAA;
   position: relative;
+  height: 50px;
 }
 .select:after {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") center no-repeat;
@@ -125,21 +160,32 @@ div.button:active {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  height: 60px;
 }
 .box_setting > div {
   margin: auto 10px;
 }
-.box_setting > div:first-child {
+/*.box_setting > div:first-child {
+  margin-left: 0;
+}*/
+.box_setting .radio,
+.box_setting .text {
   display: flex;
   flex-direction: column;
-  margin-left: 0;
-  text-align: right;
+  /*text-align: right;*/
+  text-align: left;
+  height: 100%;
+}
+.box_setting .text > div {
+  height: 50%;
+  padding: 3px;
+}
+.box_setting .text span {
+  /*bmargin-right: 10px;*/
+  margin-left: 5px;
 }
 .box_setting > div:last-child {
   margin-right: 0px;
-}
-.box_setting span {
-  margin-right: 10px;
 }
 .box_title {
   height: 60px;

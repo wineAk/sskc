@@ -1,11 +1,25 @@
 $(function() {
-  // 初回にGETで検索条件リストを取得
-  apiProcess("GET");
   // ボタンクリックでメソッドごとの処理を行う
   $(".box_setting .button").on("click", function() {
     const process = $('#target').data("process"); // 多重処理を防ぐdataタグを取得
     const method = $(this).data("method");
-    if (process == "") apiProcess(method);
+    if (process == null) apiProcess(method);
+  });
+  // ラジオボタンでAPIのキー・トークンを切り替え
+  $("#switch input").on("click", function() {
+    const id = $(this).attr("id");
+    const key = (function() {
+      if (/url_main/.test(id)) return "74YUjyUo526clrGv63QpMQa0ceMiL8R3z8qbOMZ0";
+      if (/url_test/.test(id)) return "1SzEH5ZaZZ8CNHRQDZx7E9Rdl40A8ofk3ANFkpmq";
+      return "";
+    })();
+    const tkn = (function() {
+      if (/url_main/.test(id)) return "020f92cf15635f9ce8e5c6b43b4911a8d980b94611bf5886"; // デモ用
+      if (/url_test/.test(id)) return "36efda81e0763a3ed7ab34809b33c7e33bf2a3fcd17ec0ca"; // デモ
+      return "";
+    })();
+    $("#apikey").val(key);
+    $("#token").val(tkn);
   });
 });
 // APIの取得関数
@@ -13,6 +27,7 @@ function apiProcess(mtd) {
   const key = $("#apikey").val();
   const tkn = $("#token").val();
   const num = $("#list").val();
+  const url = $("#switch").find("input:radio:checked").val();
   if (/^POST$/.test(mtd) && num == null) return; // POST時にnumが無ければ処理を行わない。
   $("#target").data("process", mtd); // 多重処理を防ぐdataタグを付与
   result("取得中…", "データを取得しています。");
@@ -25,11 +40,12 @@ function apiProcess(mtd) {
       apikey: key,
       token: tkn,
       number: num,
+      url: url,
     },
   })
   .done(function(response) {
     console.log(response);
-    $("#target").data("process", ""); // 多重処理を防ぐdataタグを削除
+    $("#target").removeData("process"); // 多重処理を防ぐdataタグを削除
     // エラーが返ってきたとき
     if (response.message != null) {
       const mess = response.message;
@@ -53,7 +69,7 @@ function apiProcess(mtd) {
   })
   .fail(function() {
     console.log(arguments);
-    $('#target').data("process", ""); // 多重処理を防ぐdataタグを削除
+    $('#target').removeData("process"); // 多重処理を防ぐdataタグを削除
     result("失敗しました", "コンソールログをご確認ください。");
   });
 }

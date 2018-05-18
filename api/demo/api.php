@@ -5,6 +5,7 @@
   $apikey = $_POST["apikey"];
   $token = $_POST["token"];
   $number = $_POST["number"];
+  $url = $_POST["url"];
   // APIに必要なcontentとheaderを作成
   $content = [
     "saved_number" => $number,
@@ -16,7 +17,7 @@
   ];
   // cURLで処理
   $curl = curl_init();
-  curl_setopt($curl, CURLOPT_URL, "https://api.saaske.com/v1/lead/list");
+  curl_setopt($curl, CURLOPT_URL, $url);
   curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
   // POSTのときのみcontentを送信する
   if($method == "POST"){
