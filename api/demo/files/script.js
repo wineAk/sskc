@@ -3,8 +3,9 @@ $(function() {
   apiProcess("GET");
   // ボタンクリックでメソッドごとの処理を行う
   $(".box_setting .button").on("click", function() {
+    const process = $('#target').data("process"); // 多重処理を防ぐdataタグを取得
     const method = $(this).data("method");
-    apiProcess(method);
+    if (process == "") apiProcess(method);
   });
 });
 // APIの取得関数
@@ -12,18 +13,13 @@ function apiProcess(mtd) {
   const key = $("#apikey").val();
   const tkn = $("#token").val();
   const num = $("#list").val();
-  if (/^POST$/.test(mtd)) {
-    // numが無ければ処理を行わない。あればリザルトを表示
-    if (num == null) {
-      return;
-    } else {
-      result("取得中･･･", "リストを取得しています。");
-    }
-  }
+  if (/^POST$/.test(mtd) && num == null) return; // POST時にnumが無ければ処理を行わない。
+  $("#target").data("process", mtd); // 多重処理を防ぐdataタグを付与
+  result("取得中…", "データを取得しています。");
   $.ajax({
     url: "api.php",
-    type: "post",
-    dataType: "json",
+    type: "POST",
+    dataType: "JSON",
     data: {
       method: mtd,
       apikey: key,
@@ -33,9 +29,11 @@ function apiProcess(mtd) {
   })
   .done(function(response) {
     console.log(response);
-    // 403が返ってきたとき
-    if (/^Forbidden$/.test(response.message)) {
-      result("エラーが発生しました", "設定が間違えてないかご確認ください。");
+    $("#target").data("process", ""); // 多重処理を防ぐdataタグを削除
+    // エラーが返ってきたとき
+    if (response.message != null) {
+      const mess = response.message;
+      result("エラーが発生しました", mess);
       return;
     }
     // サスケAPIからエラーが返ってきたとき
@@ -55,6 +53,7 @@ function apiProcess(mtd) {
   })
   .fail(function() {
     console.log(arguments);
+    $('#target').data("process", ""); // 多重処理を防ぐdataタグを削除
     result("失敗しました", "コンソールログをご確認ください。");
   });
 }
@@ -66,13 +65,11 @@ function pulldownProcess(obj) {
   pulldownCreate(obj.lead_source, "リードソース");
   pulldownCreate(obj.mail_history, "メール送信履歴");
   pulldownCreate(obj.web_visitors, "Web訪問者");
+  result("リスト名", "検索条件の保存名");
 }
 // プルダウンの生成関数
 function pulldownCreate(ary, name) {
-  // 検索条件の保存がない場合は処理を行わない
-  if (ary == null) {
-    return;
-  }
+  if (ary == null) return; // 検索条件の保存がない場合は処理を行わない
   let html = "";
   html += `<optgroup label="${name}">\n`;
   // 検索条件リストごとの処理
