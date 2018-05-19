@@ -132,6 +132,10 @@ select::-ms-expand {
   -webkit-transition: none;
   transition: none;
   width: 120px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 .button:hover {
   /*background: #31c8aa;
