@@ -20,6 +20,7 @@ $(function() {
     })();
     $("#apikey").val(key);
     $("#token").val(tkn);
+    $("#list").empty();
   });
 });
 // APIの取得関数
