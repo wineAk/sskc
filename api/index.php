@@ -1,6 +1,6 @@
 <?php
   http_response_code(404);
-  header("Location: sample");
+  header("Location: http://www.saaske.com/");
   exit;
 ?>
 <!DOCTYPE html>
