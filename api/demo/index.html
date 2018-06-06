@@ -24,7 +24,7 @@
         でのみ閲覧可能です。<br>お手数ではありますが、上記ブラウザで再度アクセスしてください。
       </p>
     </div>
-    <div class="box box_setting">
+    <div class="box box_setting" onselectstart="return false" unselectable="on">
       <div class="radio" id="switch">
         <div><input type="radio" id="url_main" name="url_api" value="https://api.saaske.com/v1/lead/list" checked><label for="url_main">メイン</label></div>
         <div><input type="radio" id="url_test" name="url_api" value="https://api.saaske.com/v1/test/lead/list"><label for="url_test">テスト</label></div>
@@ -34,8 +34,8 @@
         <div><input type="text" id="token" value="020f92cf15635f9ce8e5c6b43b4911a8d980b94611bf5886"><span>APIトークン</span></div>
       </div>
       <div class="select"><select id="list"></select></div>
-      <div class="button red" data-method="GET" onselectstart="return false" unselectable="on">検索条件を取得</div>
-      <div class="button green" data-method="POST" onselectstart="return false" unselectable="on">顧客情報を取得</div>
+      <div class="button red" data-method="GET">検索条件を取得</div>
+      <div class="button green" data-method="POST">顧客情報を取得</div>
     </div>
     <div class="box box_title">
       <h2>
