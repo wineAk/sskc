@@ -53,9 +53,8 @@ html,
    /*display: table-cell;*/
    border:1px #990000 dashed;
    padding: 5px;
-   /*width: 50%;*/
-  margin: 10px;
-  flex-grow: 1;
+   width: 50%;
+  margin: 10px 5px;
 }
 .box blockquote {
     position: relative;
