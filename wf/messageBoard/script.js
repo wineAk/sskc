@@ -33,13 +33,14 @@ function getHtml(selector) {
   var ymd = year+'年'+month+'月'+date+'日';
   var html = $(selector).html();
   var rep = html
+    .replace(/(\r\n|\n|\r)(\* .+)/g, '\n</div>\n\n$2\n\n<div class="box-message">\n')
     .replace(/\*/g, '#') // 見出し
     .replace(/''/g, '**') // 太字
     .replace(/%%/g, '~~') // 打ち消し線
     .replace(/\+/g, '1.') // 箇条書き（数字）
     .replace(/＞/g, '>')
-    .replace(/┏━+┓/g, '\n<div class="box-message">\n')
-    .replace(/┗━+┛/g, '\n</div>\n')
+    //.replace(/┏━+┓/g, '\n<div class="box-message">\n')
+    //.replace(/┗━+┛/g, '\n</div>\n')
     .replace(/┏━+/g, '\n<div class="box-table"><div class="table-cell">\n')
     .replace(/━+┛/g, '\n</div></div>\n')
     .replace(/━+/g, '\n</div><div class="table-cell">\n')

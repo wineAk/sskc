@@ -36,18 +36,26 @@ html,
     display: none;
 }
 .box .box-table {
+  /*
    display: table;
    margin: 0px;
    padding: 0px;
    width: 100%;
    border-collapse: separate;
    border-spacing: 5px 0;
+  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 .box .table-cell {
-   display: table-cell;
+   /*display: table-cell;*/
    border:1px #990000 dashed;
    padding: 5px;
-   width: 50%;
+   /*width: 50%;*/
+  margin: 10px;
+  flex-grow: 1;
 }
 .box blockquote {
     position: relative;
