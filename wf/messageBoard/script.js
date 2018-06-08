@@ -19,9 +19,10 @@ $(function() {
   hljs.initHighlightingOnLoad();
   // markdown-it
   var md = markdownit.render(getHtml('#markdown'));
-  $('#markdown').html(md);
+  var rep = md.replace(/<h1>/g, '<h1 onselectstart="return false" unselectable="on">');
+  $('#markdown').html(rep);
   // click
-  $('h1').click(function() {
+  $('h1').on('click',function() {
     $(this).next().slideToggle('slow');
   });
 });
