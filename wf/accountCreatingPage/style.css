@@ -127,33 +127,21 @@ article.resp form li.account_fee.clr {
 article.resp form li.display_none.clr {
   display: none;
 }
-article.resp form li.lead_fee.clr,
-article.resp form li.sales_fee.clr,
-article.resp form li.teleapo_fee.clr,
-article.resp form li.web_fee.clr,
-article.resp form li.tracking_fee.clr,
-article.resp form li.cti_fee.clr,
-article.resp form li.scan_fee.clr {
+article.resp form li[class*="_fee"].clr {
   margin: 0;
 }
-/*
-.lead_fee, .lead_pln,
-.sales_fee, .sales_pln,
-.teleapo_fee, .teleapo_pln,
-.web_fee, .web_pln,
-.tracking_fee, .tracking_pln,
-.cti_fee, .cti_pln,
-.scan_fee, .scan_pln
-*/
-li[class*="_fee"],
-li[class*="_pln"] {
+article.resp form li.service_fee_sum.clr,
+article.resp form li.saaske_fee_sum.clr {
+  margin: 0 0 30px;
+}
+li[class*="_fee"], li[class*="_pln"] {
   border-left: 6px solid rgba(9, 9, 9, 1);
   padding: .25em 0 .25em .75em;
 }
-/*
-.lead_pln, .sales_pln, .teleapo_pln,
-.web_pln, .tracking_pln, .cti_pln, .scan_pln
-*/
+li.service_fee_sum, li.saaske_fee_sum {
+  border-left: 0;
+  padding: 0;
+}
 li[class*="_pln"] {
   border-bottom: 1px solid rgba(9, 9, 9, 1);
 }
