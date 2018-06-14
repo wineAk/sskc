@@ -164,6 +164,8 @@ article.resp form li.scan_fee.clr {
 .cti_pln {border-bottom-color:  rgba(0, 196, 196, 1);}
 .scan_fee, .scan_pln {border-left: 6px solid rgba(206, 53, 53, 1);}
 .scan_pln {border-bottom-color:  rgba(206, 53, 53, 1);}
+.api_fee, .api_pln {border-left: 6px solid rgba(78, 132, 196, 1);}
+.api_pln {border-bottom-color:  rgba(78, 132, 196, 1);}
 /************************************
 ** 製品選択
 **
@@ -186,6 +188,7 @@ article.resp form li.scan_fee.clr {
 #tracking {background-color: rgba(233, 138, 75, 1);}
 #cti {background-color: rgba(0, 196, 196, 1);}
 #scan{background-color: rgba(206, 53, 53, 1);}
+#api{background-color: rgba(78, 132, 196, 1);}
 /* 基本設定 */
 .service_button {
   font-size: 10px;
