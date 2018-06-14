@@ -145,8 +145,8 @@ article.resp form li.scan_fee.clr {
 .cti_fee, .cti_pln,
 .scan_fee, .scan_pln
 */
-li[class$="_fee"],
-li[class$="_pln"] {
+li[class*="_fee"],
+li[class*="_pln"] {
   border-left: 6px solid rgba(9, 9, 9, 1);
   padding: .25em 0 .25em .75em;
 }
@@ -154,25 +154,25 @@ li[class$="_pln"] {
 .lead_pln, .sales_pln, .teleapo_pln,
 .web_pln, .tracking_pln, .cti_pln, .scan_pln
 */
-li[class$="_pln"] {
+li[class*="_pln"] {
   border-bottom: 1px solid rgba(9, 9, 9, 1);
 }
-.lead_fee, .lead_pln {border-left-color: rgba(142, 168, 0, 1);}
-.lead_pln {border-bottom-color: rgba(142, 168, 0, 1);}
-.sales_fee, .sales_pln {border-left-color: rgba(13, 123, 166, 1);}
-.sales_pln {border-bottom-color: rgba(13, 123, 166, 1);}
-.teleapo_fee, .teleapo_pln {border-left-color: rgba(68, 157, 49, 1);}
-.teleapo_pln {border-bottom-color: rgba(68, 157, 49, 1);}
-.web_fee, .web_pln {border-left-color: rgba(180, 108, 213, 1);}
-.web_pln {border-bottom-color:  rgba(180, 108, 213, 1);}
-.tracking_fee, .tracking_pln {border-left: 6px solid rgba(233, 138, 75, 1);}
-.tracking_pln {border-bottom-color:  rgba(233, 138, 75, 1);}
-.cti_fee, .cti_pln {border-left: 6px solid rgba(0, 196, 196, 1);}
-.cti_pln {border-bottom-color:  rgba(0, 196, 196, 1);}
-.scan_fee, .scan_pln {border-left: 6px solid rgba(206, 53, 53, 1);}
-.scan_pln {border-bottom-color:  rgba(206, 53, 53, 1);}
-.api_fee, .api_pln {border-left: 6px solid rgba(78, 132, 196, 1);}
-.api_pln {border-bottom-color:  rgba(78, 132, 196, 1);}
+li.lead_fee, li.lead_pln {border-left-color: rgba(142, 168, 0, 1);}
+li.lead_pln {border-bottom-color: rgba(142, 168, 0, 1);}
+li.sales_fee, li.sales_pln {border-left-color: rgba(13, 123, 166, 1);}
+li.sales_pln {border-bottom-color: rgba(13, 123, 166, 1);}
+li.teleapo_fee, li.teleapo_pln {border-left-color: rgba(68, 157, 49, 1);}
+li.teleapo_pln {border-bottom-color: rgba(68, 157, 49, 1);}
+li.web_fee, li.web_pln {border-left-color: rgba(180, 108, 213, 1);}
+li.web_pln {border-bottom-color:  rgba(180, 108, 213, 1);}
+li.tracking_fee, li.tracking_pln {border-left-color: rgba(233, 138, 75, 1);}
+li.tracking_pln {border-bottom-color:  rgba(233, 138, 75, 1);}
+li.cti_fee, li.cti_pln {border-left-color: rgba(0, 196, 196, 1);}
+li.cti_pln {border-bottom-color:  rgba(0, 196, 196, 1);}
+li.scan_fee, li.scan_pln {border-left-color: rgba(206, 53, 53, 1);}
+li.scan_pln {border-bottom-color:  rgba(206, 53, 53, 1);}
+li.api_fee, li.api_pln {border-left-color: rgba(78, 132, 196, 1);}
+li.api_pln {border-bottom-color:  rgba(78, 132, 196, 1);}
 /************************************
 ** 製品選択
 **
