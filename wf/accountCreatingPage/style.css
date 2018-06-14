@@ -136,18 +136,25 @@ article.resp form li.cti_fee.clr,
 article.resp form li.scan_fee.clr {
   margin: 0;
 }
+/*
 .lead_fee, .lead_pln,
 .sales_fee, .sales_pln,
 .teleapo_fee, .teleapo_pln,
 .web_fee, .web_pln,
 .tracking_fee, .tracking_pln,
 .cti_fee, .cti_pln,
-.scan_fee, .scan_pln {
+.scan_fee, .scan_pln
+*/
+li[class$="_fee"],
+li[class$="_pln"] {
   border-left: 6px solid rgba(9, 9, 9, 1);
   padding: .25em 0 .25em .75em;
 }
+/*
 .lead_pln, .sales_pln, .teleapo_pln,
-.web_pln, .tracking_pln, .cti_pln, .scan_pln {
+.web_pln, .tracking_pln, .cti_pln, .scan_pln
+*/
+li[class$="_pln"] {
   border-bottom: 1px solid rgba(9, 9, 9, 1);
 }
 .lead_fee, .lead_pln {border-left-color: rgba(142, 168, 0, 1);}
