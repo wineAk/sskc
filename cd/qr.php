@@ -4,7 +4,7 @@
   $dir = "./{$master}/";
   $file_list = getApkList($dir);
   list($file_name, $file_last) = getApkLast($file_list);
-  $file_ver  = "現在のバージョンは<strong>{$file_name}</strong>です。";
+  $file_ver  = "現在のバージョンは<strong id=\"version\">{$file_name}</strong>です。";
 ?>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="files/icon.png">
