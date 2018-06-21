@@ -62,20 +62,29 @@ function table(data) {
 }
 
 function checkbox(data) {
-  var documentInput = (function() {
-    if ($('.document .input label').length) return '.document .input label';
-    return '.document .input';
-  })();
   var name = data.name;
   var title = data.title;
-  $(documentInput).each(function() {
-    var html = $(this).html();
-    var text = $(this).text();
-    var urlReg = new RegExp(' https?:\/\/www\.saaske\.com\/document\/' + name);
-    if (urlReg.test(text)) {
-      var titleRep = title.replace(/<.+>/g, '');
-      var repHtml = html.replace(urlReg, titleRep);
-      $(this).html(repHtml);
-    }
-  });
+  if ($('.document .input label').length) {
+    $('.document .input label').each(function() {
+      var html = $(this).html();
+      var text = $(this).text();
+      var urlReg = new RegExp(' https?:\/\/www\.saaske\.com\/document\/' + name);
+      if (urlReg.test(text)) {
+        var titleRep = title.replace(/<.+>/g, '');
+        var repHtml = html.replace(urlReg, titleRep);
+        $(this).html(repHtml);
+      }
+    });
+  } else {
+    $('.document .input').each(function() {
+      var html = $(this).html();
+      var text = $(this).text();
+      var urlReg = new RegExp('https?:\/\/www\.saaske\.com\/document\/' + name);
+      if (urlReg.test(text)) {
+        var titleRep = title.replace(/<.+>/g, '');
+        var repHtml = html.replace(urlReg, titleRep);
+        $(this).html(repHtml);
+      }
+    });
+  }
 }
