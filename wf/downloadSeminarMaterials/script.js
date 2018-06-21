@@ -32,15 +32,15 @@ function table(data) {
   var name = data.name;
   var title = data.title;
   var url = data.url;
-  var button = (function(){
-    if (data.button == '') return '準備中';
-    return data.button;
-  })();
+  var ribbon = data.ribbon;
   var size = (function(){
     if (data.size == '') return '15px';
     return data.size;
   })();
-  var ribbon = data.ribbon;
+  var button = (function(){
+    if (ribbon == 'soon') return '準備中';
+    return 'Download';
+  })();
   var html =
     '<div class="flex-item"><div>' +
     '<h2 style="font-size:' + size + ';">' + title + '</h2>' +
