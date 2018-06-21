@@ -21,12 +21,13 @@ article.resp form li.clr.document div.col.span_9 br {
 }
 .flex-item {
   width: 30%;
-  margin: 20px 0;
+/*  margin: 20px 0;*/
+  margin: 20px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  justify-content: center;
+/*  justify-content: center;*/
   align-items: flex-end;
 }
 .flex-item > div {
