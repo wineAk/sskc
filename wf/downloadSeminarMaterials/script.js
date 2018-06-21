@@ -54,7 +54,7 @@ function table(data) {
   var html =
     '<div class="flex-item"><div>' +
     '<h2 style="font-size:' + size + ';">' + title + '</h2>' +
-    '<div class="ribbon ' + resRibbon + '"><iframe src="' + url + '" frameborder="0" height="254"></iframe></div>' +
+    '<div class="ribbon ' + ribbon + '"><iframe src="' + url + '" frameborder="0" height="254"></iframe></div>' +
     // allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
     '<div class="button" data-name="' + name + '">' + button + '</div>' +
     '</div></div>';
