@@ -10,6 +10,9 @@ $(function() {
     checkbox(setting[i]); // 項目の名称を変更
   }
   $('.button').on('click', function() {
+    // nameが無いときは処理しない
+    var name = $(this).data('name');
+    if (name == null || name == '') return;
     // 入力フォームまで移動
     $('html, body').animate({
       scrollTop: $('#anchor_inquiryForm').offset().top
@@ -19,8 +22,7 @@ $(function() {
     $('.document input').prop('checked', false); // 全てのチェックを外す
     $('article.resp form li.clr.document div.col.span_9 label').css('display', 'none'); // 全ての項目を非表示
     // ボタンごとにチェックを入れる
-    var id = $(this).attr('id');
-    var trg = $('input[value*="www.saaske.com/document/' + id + '"]');
+    var trg = $('input[value*="www.saaske.com/document/' + name + '"]');
     trg.prop('checked', true); // チェックを付ける
     trg.parent().stop(true, true).fadeIn(1000); // 項目を表示する
   });
@@ -30,23 +32,23 @@ function table(data) {
   var name = data.name;
   var title = data.title;
   var url = data.url;
-  var button = data.button;
+  var button = (function(){
+    if (data.button == '') return '準備中';
+    return data.button;
+  })();
   var size = (function(){
     if (data.size == '') return '15px';
     return data.size;
   })();
-  var ribbon = (function(){
-    if (data.ribbon == '') return 'old';
-    return data.ribbon;
-  })();
+  var ribbon = data.ribbon;
   var html =
     '<div class="flex-item"><div>' +
     '<h2 style="font-size:' + size + ';">' + title + '</h2>' +
     '<div class="ribbon ' + ribbon + '"><iframe src="' + url + '" frameborder="0" height="254"></iframe></div>' +
     // allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
-    '<div class="button" id="' + name + '">' + button + '</div>' +
+    '<div class="button" data-name="' + name + '">' + button + '</div>' +
     '</div></div>';
-  if (title != '' || title != null) $('#docs').append(html);
+  if (title != '') $('#docs').append(html);
 }
 
 function checkbox(data) {
