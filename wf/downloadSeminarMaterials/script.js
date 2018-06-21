@@ -29,26 +29,36 @@ $(function() {
 });
 
 function table(data) {
-  var name = data.name;
   var title = data.title;
   var url = data.url;
-  var ribbon = data.ribbon;
   var size = (function(){
     if (data.size == '') return '15px';
     return data.size;
   })();
+  // nameが空のときribbonはsoon
+  var ribbon = (function(){
+    if (data.name == '') return 'soon';
+    return data.ribbon;
+  })();
+  // ribbonがsoonのときnameは空
+  var name = (function(){
+    if (ribbon == 'soon') return '';
+    return data.name;
+  })();
+  // buttonのそれぞれ
   var button = (function(){
     if (ribbon == 'soon') return '準備中';
     return 'Download';
   })();
+  // HTML生成
   var html =
     '<div class="flex-item"><div>' +
     '<h2 style="font-size:' + size + ';">' + title + '</h2>' +
-    '<div class="ribbon ' + ribbon + '"><iframe src="' + url + '" frameborder="0" height="254"></iframe></div>' +
+    '<div class="ribbon ' + resRibbon + '"><iframe src="' + url + '" frameborder="0" height="254"></iframe></div>' +
     // allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
     '<div class="button" data-name="' + name + '">' + button + '</div>' +
     '</div></div>';
-  if (title != '') $('#docs').append(html);
+  if (title != '' && url != '') $('#docs').append(html);
 }
 
 function checkbox(data) {
