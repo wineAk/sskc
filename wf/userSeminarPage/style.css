@@ -75,10 +75,10 @@ strong.marker_c {
 ** テキストに色を付ける（Materializeから抜粋）
 ** https://materializecss.com/color.html
 ** 背景色を付ける　【<div class="teal lighten-2">This is a teal lighten-2 class</div>】
-** 文字色を付ける　【<span class="blue-text text-darken-2">This is dark blue text</span>】
+** 文字色を付ける　【<p class="blue-text text-darken-2">This is dark blue text</p>】
 **
 ************************************/
-@import url('materialize.css');
+@import url('https://wineak.github.io/sskc/wf/userSeminarPage/materialize.css');
 
 /************************************
 ** その他
