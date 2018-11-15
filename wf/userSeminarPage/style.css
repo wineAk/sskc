@@ -1,7 +1,90 @@
 /************************************
-** 新規にタイトルを作成
+** テキストにライン（下線）を引く
+** 本文　【<strong class="marker">強調します</strong>】
+** 注意文【<strong class="marker_c ">強調します</strong>】
 **
 ************************************/
+strong.marker {
+  background-image: linear-gradient(transparent 60%,#feb5c9 50%);
+  font-weight: bold;
+  padding: 0 5px;
+}
+strong.marker_c {
+  background-image: linear-gradient(transparent 60%,rgba(254, 181, 201, 0.45) 50%);
+  padding: 0 1px;
+}
+
+/************************************
+** マージンの調整用
+** 全てのマージンを消す【<p class="m0">全てのマージン</p>】
+** 下部のマージンを削す【<p class="mb0 ">下部のマージン</p>】
+** 上部のマージンを消す【<p class="mt0 ">上部のマージン</p>】
+**
+************************************/
+#seminar_form .m0 {
+  margin: 0;
+}
+#seminar_form .mb0 {
+  margin-bottom: 0;
+}
+#seminar_form .mt0 {
+  margin-top: 0;
+}
+
+/************************************
+** テキストの整列
+** 左揃えにする　【<p class="left_align">左揃え</p>】
+** 右揃えにする　【<p class="right_align">右揃え</p>】
+** 中央揃えにする【<p class="center_align">中央揃え</p>】
+************************************/
+#seminar_form .left_align {
+  text-align: left;
+}
+#seminar_form .right_align {
+  text-align: right;
+}
+#seminar_form .center_align {
+  text-align: center;
+}
+
+/************************************
+** テキストのサイズ
+** 極小　　【<p class="tiny_font">極小（8px）</p>】
+** 小さい　【<p class="small_font">小さい（12px）</p>】
+** 通常　　【<p class="medium_font">通常（16px）</p>】
+** 大きい　【<p class="large_font">大きい（24px）</p>】
+** 極大　　【<p class="enormous_font">極大（32px）</p>】
+************************************/
+#seminar_form .tiny_font {
+  font-size: 8px;
+}
+#seminar_form .small_font {
+  font-size: 12px;
+}
+#seminar_form .medium_font {
+  font-size: 16px;
+}
+#seminar_form .large_font {
+  font-size: 24px;
+}
+#seminar_form .enormous_font {
+  font-size: 32px;
+}
+
+/************************************
+** テキストに色を付ける（Materializeから抜粋）
+** https://materializecss.com/color.html
+** 背景色を付ける　【<div class="teal lighten-2">This is a teal lighten-2 class</div>】
+** 文字色を付ける　【<span class="blue-text text-darken-2">This is dark blue text</span>】
+**
+************************************/
+@import url('materialize.css');
+
+/************************************
+** その他
+**
+************************************/
+/* 新規にタイトルを作成 */
 .wgt-heading__inner {
   display: none;
 }
@@ -26,15 +109,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
   height: 190px;
-/* もし下線が欲しい場合は有効化すること */
 /*	border-bottom: 1px solid #d4d1cf; */
   text-align: center;
 }
-
-/************************************
-** パノラマ
-**
-************************************/
+/* パノラマ */
 .tour {
   margin-top: 10px;
   max-width: 518px;
@@ -49,46 +127,16 @@ div#pano {
   width: 100%;
   height: 180px
 }
-
-/************************************
-** 文字にライン（下線）を引くタグ
-** 本文　【<strong class="marker">強調します</strong>】
-** 注意文【<strong class="marker_c ">強調します</strong>】
-**
-************************************/
-strong.marker {
-  background-image: linear-gradient(transparent 60%,#feb5c9 50%);
-  font-weight: bold;
-  padding: 0 5px;
-}
-strong.marker_c {
-  background-image: linear-gradient(transparent 60%,rgba(254, 181, 201, 0.45) 50%);
-  padding: 0 1px;
-}
-
-/************************************
-** マージンの調整用
-**
-************************************/
-#seminar_form .m0 {
-  margin: 0;
-}
-#seminar_form .mb0 {
-  margin-bottom: 0;
-}
-#seminar_form .mt0 {
-  margin-top: 0;
-}
-
-/************************************
-** その他
-**
-************************************/
+/* 各種微調整 */
 #seminar_form h3 {
   margin: 0;
 }
 #seminar_form h3 span {
   font-size: 12px;
+}
+#seminar_form h3.table-subtitle span {
+  display: block;
+  font-size: .9em;
 }
 #seminar_form dl {
   margin: 0;
