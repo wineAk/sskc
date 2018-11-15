@@ -153,6 +153,13 @@ div#pano {
 .wgt-form__heading {
   display: none;
 }
+/* 余分なスペースを削除 */
+.base-page {
+  font-size: 0;
+}
+.base-page > * {
+  font-size: 1rem;
+}
 
 /************************************
 ** モバイル対応
