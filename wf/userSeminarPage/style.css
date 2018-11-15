@@ -109,7 +109,7 @@ strong.marker_c {
   -ms-flex-direction: column;
   flex-direction: column;
   height: 190px;
-/*	border-bottom: 1px solid #d4d1cf; */
+  /*border-bottom: 1px solid #d4d1cf;*/
   text-align: center;
 }
 /* パノラマ */
@@ -128,16 +128,6 @@ div#pano {
   height: 180px
 }
 /* 各種微調整 */
-#seminar_form h3 {
-  margin: 0;
-}
-#seminar_form h3 span {
-  font-size: 12px;
-}
-#seminar_form h3.table-subtitle span {
-  display: block;
-  font-size: .9em;
-}
 #seminar_form dl {
   margin: 0;
 }
