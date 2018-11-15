@@ -56,54 +56,64 @@ div#pano {
 ** 注意文【<strong class="marker_c ">強調します</strong>】
 **
 ************************************/
-.marker {
+strong.marker {
   background-image: linear-gradient(transparent 60%,#feb5c9 50%);
   font-weight: bold;
   padding: 0 5px;
 }
-.marker_c {
+strong.marker_c {
   background-image: linear-gradient(transparent 60%,rgba(254, 181, 201, 0.45) 50%);
   padding: 0 1px;
+}
+
+/************************************
+** マージンの調整用
+**
+************************************/
+#seminar_form .m0 {
+  margin: 0;
+}
+#seminar_form .mb0 {
+  margin-bottom: 0;
+}
+#seminar_form .mt0 {
+  margin-top: 0;
 }
 
 /************************************
 ** その他
 **
 ************************************/
-h4 {
-  margin: 0px;
+#seminar_form h3 {
+  margin: 0;
 }
-p.comment {
-  margin: 0px;
-  font-weight: normal;
+#seminar_form h3 span {
+  font-size: 12px;
 }
-table {
+#seminar_form dl {
+  margin: 0;
+}
+#seminar_form table {
   border-top-style: none;
   border-collapse: collapse;
 }
-table th {
+#seminar_form table th {
   width: 200px;
 }
-/* hrタグ有効化 */
-hr.line {
+#seminar_form hr {
   display: block;
   border: 0;
   height: 0;
   border-bottom: 1px solid #DCDCDC;
 }
+/* 「問い合わせ先」用 */
+#seminar_form .table-header:first-child {
+  font-weight: normal;
+  border-bottom: none;
+}
 /* フォーム内のタイトル非表示 */
 .wgt-form__heading {
   display: none;
-}
-/* liのドットを非表示 */
-.none-li-dot {
-  list-style: none;
-  padding: 0px;
-}
-/* 問い合わせ */
-.table-info {
-  font-weight: normal;
-  border-bottom-style: none;
 }
 
 /************************************
@@ -147,13 +157,102 @@ hr.line {
   }
   #seminar_form table td.header,
   #seminar_form table td.table-header {
-    padding: 0px;
+    padding: 0;
   }
   /* その他モバイル向けに調整 */
   #seminar_form {
     margin-right: 20px;
   }
-  iframe.googlemap {
+  #seminar_form iframe.googlemap {
     width: 100%;
   }
+}
+
+/************************************
+** UIのデザイン
+**
+************************************/
+/* チェックボックス・ラジオボタン */
+article.resp input[type="checkbox"],
+article.resp input[type="radio"] {
+  background: #fff;
+  outline: 0;
+  vertical-align: middle;
+}
+/* ラジオボタン */
+article.resp input[type="radio"] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+  border: 1px solid #d4d1cf;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+article.resp input[type="radio"]::before {
+  position: absolute;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  content: '';
+  background: #80a34a;
+  border-radius: 50%;
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+article.resp input[type="radio"]:checked::before {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+/************************************
+** Bug Fixed
+**
+************************************/
+/* 以前の矢印を非表示 */
+.btn-arrow::before,
+.btn-arrow::after {
+  display: none;
+}
+/* 新たに矢印を作成（対象を.btn-arrowから.btn-arrow aに変更） */
+.btn-arrow a::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  background-color: #fff;
+  border: solid 1px #80B13F;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 100%;
+}
+.btn-arrow a:hover::before {
+  background-color: #80B13F;
+}
+.btn-arrow a::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 23px;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  border-right: 1px solid #80B13F;
+  border-bottom: 1px solid #80B13F;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.btn-arrow a:hover::after {
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
