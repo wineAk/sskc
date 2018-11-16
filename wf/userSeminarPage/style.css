@@ -301,3 +301,20 @@ article.resp input[type="radio"]:checked::before {
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
 }
+
+/************************************
+** CSS hack
+**
+************************************/
+/* IE10以下 */
+article.resp input[type="checkbox"],
+article.resp input[type="radio"] {
+  border: none\9;
+}
+/* Edge*/
+@supports (-ms-ime-align: auto) {
+  article.resp input[type="checkbox"],
+  article.resp input[type="radio"] {
+    border: none;
+  }
+}
