@@ -53,7 +53,7 @@ const service = [{
     'id': 'works',
     'list': 'Works',
     'button': 'Works',
-    'color': '#80BC2D, #5087E8, #B392E6, #FF83CC, #FC5F60, #F49700'
+    'color': '125deg, #80BC2D 3%, #5087E8, #B392E6, #FF83CC, #FC5F60, #F49700'
   }
 ];
 // ターゲット
