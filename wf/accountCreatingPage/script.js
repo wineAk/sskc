@@ -166,8 +166,7 @@ $(function() {
     const btn = service[i].button;
     const clr = service[i].color;
     if (id === 'works') {
-      const gradient = `linear-gradient(to ${clr});`
-      styleHtml += `[data-service="${id}"] {background:${gradient};border-image:${gradient};}`;
+      styleHtml += `[data-service="${id}"] {background:linear-gradient(${clr});border-image:linear-gradient(${clr});}`;
     } else {
       styleHtml += `[data-service="${id}"] {background-color:${clr};border-color:${clr};}`;
     }
