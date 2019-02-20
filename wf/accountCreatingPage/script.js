@@ -48,7 +48,14 @@ const service = [{
     'list': 'API',
     'button': 'API',
     'color': 'rgba(78, 132, 196, 1)'
-  }];
+  },
+  {
+    'id': 'works',
+    'list': 'Works',
+    'button': 'Works',
+    'color': '#80BC2D, #5087E8, #B392E6, #FF83CC, #FC5F60, #F49700'
+  }
+];
 // ターゲット
 const target = {
   // ご契約者情報
@@ -73,7 +80,7 @@ const target = {
 };
 // パスワード生成
 function registerPassword() {
-  const passNum = Number($('#password input[name=num]').val());
+  const passNum = removeNonNumber($('#password input[name=num]').val());
   let n = 26; // ランダム調整
   let randomString = '';
   let baseString = 'abcdefghijklmnopqrstuvwxyz';
@@ -117,29 +124,35 @@ function registerNextMonthDate() {
 // 自動計算処理
 function automaticCalculation() {
   // アカウント情報2
-  const account_paid = Number($(`[name=${target['account_paid']}]`).val()); // 有料アカウント数
-  const account_free = Number($(`[name=${target['account_free']}]`).val()); // 無料アカウント数
+  const account_paid = removeNonNumber($(`[name=${target['account_paid']}]`).val()); // 有料アカウント数
+  const account_free = removeNonNumber($(`[name=${target['account_free']}]`).val()); // 無料アカウント数
   $(`[name=${target['account_num']}]`).val(account_paid + account_free); // (アカウント合計数)
-  const account_fee = Number($(`[name=${target['account_fee']}]`).val()); // アカウント料金
+  const account_fee = removeNonNumber($(`[name=${target['account_fee']}]`).val()); // アカウント料金
   $(`[name=${target['account_fee_sum']}]`).val(account_paid * account_fee); // (アカウント料金 合計)
   // 契約情報2
   let service_fee = 0;
   $('.service-list').each(function() {
     // .service-list-planを持ってない要素にあるinput（=各サービスの金額）だけ足していく
-    if (!$(this).hasClass('service-list-plan')) service_fee += Number($(this).find('input').val());
+    if (!$(this).hasClass('service-list-plan')) service_fee += removeNonNumber($(this).find('input').val());
   });
   $(`[name=${target['service_fee_sum']}]`).val(service_fee);
   // その他
-  const account_fee_sum = Number($(`[name=${target['account_fee_sum']}]`).val()); // (アカウント料金 合計)
-  const service_fee_sum = Number($(`[name=${target['service_fee_sum']}]`).val()); // (サービス料金 合計)
+  const account_fee_sum = removeNonNumber($(`[name=${target['account_fee_sum']}]`).val()); // (アカウント料金 合計)
+  const service_fee_sum = removeNonNumber($(`[name=${target['service_fee_sum']}]`).val()); // (サービス料金 合計)
   $(`[name=${target['saaske_fee']}]`).val(account_fee_sum + service_fee_sum); // サスケ 合計
-  const saaske_fee = Number($(`[name=${target['saaske_fee']}]`).val()); // サスケ 合計
+  const saaske_fee = removeNonNumber($(`[name=${target['saaske_fee']}]`).val()); // サスケ 合計
   $(`[name=${target['saaske_fee_tax']}]`).val(taxCalculation(saaske_fee)); // サスケ 合計 税込み
 }
 // 消費税計算 (切り捨てfloor, 切り上げceil, 四捨五入round)
 function taxCalculation(price) {
-  const priceTax = price * tax;
-  return Math.floor(priceTax);
+  const taxIncluded = Math.floor(price * tax);
+  return taxIncluded;
+}
+// 数字以外を除去
+function removeNonNumber(str) {
+  const rep = str.replace(/[^0-9]/g, '');
+  const num = Number(rep);
+  return num;
 }
 // --------------------
 // 各種処理
@@ -152,7 +165,12 @@ $(function() {
     const id = service[i].id;
     const btn = service[i].button;
     const clr = service[i].color;
-    styleHtml += `[data-service="${id}"] {background-color:${clr};border-color:${clr};}`;
+    if (id === 'works') {
+      const gradient = `linear-gradient(to ${clr});`
+      styleHtml += `[data-service="${id}"] {background:${gradient};border-image:${gradient};}`;
+    } else {
+      styleHtml += `[data-service="${id}"] {background-color:${clr};border-color:${clr};}`;
+    }
     buttonHtml += `<div data-service="${id}">${btn}</div>`;
   }
   $('head').append(`<style>${styleHtml}</style>`);
