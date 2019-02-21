@@ -1,5 +1,3 @@
-// 税金
-const tax = 1.08;
 // サービス
 const service = [{
     'id': 'lead',
@@ -58,6 +56,8 @@ const service = [{
 ];
 // ターゲット
 const target = {
+  'sales_person': 'wf21845574027', // 主担当
+  'sales_person_email': 'wf21845574025', // メールアドレス
   // ご契約者情報
   'membership_type': 'wf21845574052', // 会員種別
   // アカウント情報1
@@ -77,9 +77,24 @@ const target = {
   // 契約情報2
   'service_fee_sum': 'wf21845574024', // (サービス料金 合計)
   // その他
+  'tax_rate': 'wf21845574055', // 税率
   'saaske_fee': 'wf21845574044', // サスケ 合計
-  'saaske_fee_tax': 'wf21845574049', // サスケ 合計 税込み
+  'saaske_fee_tax': 'wf21845574049' // サスケ 合計 税込み
 };
+// 主担当のメアド
+const email = {
+  '倉本': 'kuramoto',
+  '柴田': 'shibata',
+  '松場': 'matsuba',
+  '赤坂': 'akasaka',
+  '太田': 'oota',
+  '須藤': 'sudou',
+  '河南': 'kawanami',
+  '佐藤': 't-sato',
+  '南': 'minami',
+  '西教': 'yuko',
+  '池田': 'ikeda'
+}
 // パスワード生成
 function registerPassword() {
   const passNum = removeNonNumber($('#password input[name=num]').val());
@@ -135,6 +150,8 @@ function automaticCalculation() {
 }
 // 消費税計算 (切り捨てfloor, 切り上げceil, 四捨五入round)
 function taxCalculation(price) {
+  const taxVal = $(`[name=${target['tax_rate']}]`).val();
+  const tax = 1 + taxCalculation(taxVal) / 100;
   const taxIncluded = Math.floor(price * tax);
   return taxIncluded;
 }
@@ -172,7 +189,7 @@ function switchMembershipType() {
 // --------------------
 // 各種処理
 // --------------------
-$(window).load(function(){
+$(window).load(function() {
   // style＆製品ボタンを書き出す
   let styleHtml = '';
   let buttonHtml = '';
@@ -234,6 +251,10 @@ $(window).load(function(){
   // 無料・有料会員
   $(`[name=${target['membership_type']}]`).on('click', function() {
     switchMembershipType();
+  });
+  // 税率
+  $(`[name=${target['tax_rate']}]`).on('click', function() {
+    automaticCalculation();
   });
   // 製品ボタン
   $('#service div').on('click', function() {
