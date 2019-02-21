@@ -146,6 +146,7 @@ function removeNonNumber(str) {
   return num;
 }
 function switchMembershipType(val) {
+  const val = $(`[name=${target['membership_type']}]`).val();
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true);
   $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', true);
@@ -222,12 +223,12 @@ $(function() {
   });
   // 1ヶ月後
   $('#next_month').on('click', function() {
-    registerNextMonthDate();
+    const val = $(`[name=${target['membership_type']}]`).val();
+    if (/無料/.test(val)) registerNextMonthDate();
   });
   // 無料・有料会員
   $(`[name=${target['membership_type']}]`).on('change', function() {
-    const val = $(this).val();
-    switchMembershipType(val);
+    switchMembershipType();
   });
   // 製品ボタン
   $('#service div').on('click', function() {
