@@ -166,9 +166,9 @@ $(function() {
     const btn = service[i].button;
     const clr = service[i].color;
     if (id === 'works') {
-      styleHtml += `[data-service="${id}"] {background:linear-gradient(${clr});border-image:linear-gradient(${clr});}`;
+      styleHtml += `[data-service="${id}"] {background:linear-gradient(${clr});}`;
     } else {
-      styleHtml += `[data-service="${id}"] {background-color:${clr};border-color:${clr};}`;
+      styleHtml += `[data-service="${id}"] {background-color:${clr};}`;
     }
     buttonHtml += `<div data-service="${id}">${btn}</div>`;
   }
@@ -186,12 +186,10 @@ $(function() {
       return null;
     })();
     if (serviceName == null) {
-      if (/合計/.test(labelText)) $(this).addClass('sum-list');
-      if (/アカウント/.test(labelText)) $(this).addClass('account-list');
+      if (/合計/.test(labelText)) $(this).addClass('sum-list').wrapInner('<div>');
+      if (/アカウント/.test(labelText)) $(this).attr('data-service', '').addClass('account-list').wrapInner('<div>');
     } else {
-      $(this).data('service', serviceName);
-      $(this).attr('data-service', serviceName);
-      $(this).addClass('service-list');
+      $(this).data('service', serviceName).attr('data-service', serviceName).addClass('service-list').wrapInner('<div>');
       if (/プラン/.test(labelText)) $(this).addClass('service-list-plan');
       // inputに記入あったら表示させておく
       if ($(this).find('input').val() !== '') $(`[data-service=${serviceName}].service-list`).css('display', 'list-item');

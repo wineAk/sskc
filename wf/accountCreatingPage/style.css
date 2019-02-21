@@ -169,21 +169,27 @@ article.resp li.label {
 article.resp form li.clr.account-list,
 article.resp form li.clr.service-list {
   margin: 0;
-  border-left-style: solid;
-  border-left-width: 6px;
-  background-color: transparent;
-  padding: .25em 0 .25em .75em;
+  padding-left: 6px;
 }
 
 article.resp form li.clr.service-list {
   display: none;
 }
 
+.account-list>div,
+.service-list>div {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 5px 0 0 5px;
+}
+
+.service-list.service-list-plan>div {
+  padding-top: 0;
+}
+
 article.resp form li.clr.account-list.sum-list,
 article.resp form li.clr.service-list.service-list-plan {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  margin-bottom: 5px;
+  padding-bottom: 2px;
+  margin-bottom: 6px;
 }
 
 /************************************
@@ -210,4 +216,9 @@ p {
 
 article.resp .sum-list input[type="text"] {
   border: #fff;
+  background-color: transparent;
+}
+
+article.resp div.col.span_9 em {
+  font-size: 12px;
 }
