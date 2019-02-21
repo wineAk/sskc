@@ -81,24 +81,12 @@ const target = {
 // パスワード生成
 function registerPassword() {
   const passNum = removeNonNumber($('#password input[name=num]').val());
-  let n = 26; // ランダム調整
-  let randomString = '';
-  let baseString = 'abcdefghijklmnopqrstuvwxyz';
-  // 数字も使用なら追加
-  if ($('#password input[name=number]').prop('checked')) {
-    baseString += '0123456789';
-    n += 10;
-  }
-  // 大文字も使用なら追加
-  if ($('#password input[name=bigger]').prop('checked')) {
-    baseString += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    n += 26;
-  }
-  // 文字列生成
-  for (let i = 0; i < passNum; i++) {
-    randomString += baseString.charAt(Math.floor(Math.random() * n));
-  }
-  $(`[name=${target['login_password']}]`).val(randomString);
+  let password = '';
+  let string = 'abcdefghijklmnopqrstuvwxyz';
+  if ($('#password input[name=number]').prop('checked')) string += '0123456789';
+  if ($('#password input[name=bigger]').prop('checked')) string += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  for (let i = 0; i < passNum; i++) password += string.charAt(Math.floor(Math.random() * string.length));
+  $(`[name=${target['login_password']}]`).val(password);
 }
 // 来月の日付を登録
 function registerNextMonthDate() {
@@ -150,6 +138,7 @@ function taxCalculation(price) {
 }
 // 数字以外を除去
 function removeNonNumber(str) {
+  if (str == null || str === '') return 0;
   const rep = str.replace(/[^0-9]/g, '');
   const num = Number(rep);
   return num;
