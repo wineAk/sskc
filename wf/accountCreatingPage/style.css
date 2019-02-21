@@ -219,7 +219,7 @@ article.resp .sum-list input[type="text"] {
   background-color: transparent;
 }
 
-.ui-datepicker-trigger[alt=""] {
+.ui-datepicker-trigger[alt=" "] {
   color: auto;
 }
 
