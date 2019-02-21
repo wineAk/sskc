@@ -210,8 +210,8 @@ p {
   margin: 0;
 }
 
-#next_month {
-  font-size: 10px;
+article.resp div.col.span_9 em {
+  font-size: 12px;
 }
 
 article.resp .sum-list input[type="text"] {
@@ -219,6 +219,10 @@ article.resp .sum-list input[type="text"] {
   background-color: transparent;
 }
 
-article.resp div.col.span_9 em {
-  font-size: 12px;
+.ui-datepicker-trigger[alt=""] {
+  color: auto;
+}
+
+#next_month {
+  font-size: 10px;
 }

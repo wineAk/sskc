@@ -148,10 +148,6 @@ function removeNonNumber(str) {
 // 有料・無料選択の切り替え処理
 function switchMembershipType() {
   const val = $(`[name=${target['membership_type']}]:checked`).val();
-  const datepickerCss = {
-    'display': 'inline',
-    'cursor': 'auto'
-  };
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true).prop('checked', false);
   $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', true);
@@ -159,21 +155,21 @@ function switchMembershipType() {
   if (val == null) {
     $(`[name=${target['trial_period']}]`).val('');
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).val('');
-    $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css(datepickerCss);
+    $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css('display', 'inline');
   } else if (/無料/.test(val)) {
     registerNextMonthDate();
     $(`[name=${target['trial_period']}]`).prop('disabled', false);
     $(`[name=${target['method_payment']}]:eq(2)`).prop('disabled', false).prop('checked', true);
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).val('');
-    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css(datepickerCss);
-    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css(datepickerCss);
+    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css('display', 'inline');
+    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css('display', 'inline');
   } else if (/有料/.test(val)) {
     $(`[name=${target['trial_period']}]`).val('');
     $(`[name=${target['method_payment']}]:eq(0)`).prop('disabled', false).prop('checked', true);
     $(`[name=${target['method_payment']}]:eq(1)`).prop('disabled', false);
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', false);
-    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css(datepickerCss);
-    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css(datepickerCss);
+    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css('display', 'inline');
+    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css('display', 'inline');
   }
 }
 // --------------------
