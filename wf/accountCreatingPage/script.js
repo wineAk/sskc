@@ -72,6 +72,8 @@ const target = {
   // 契約情報1
   'trial_period': 'wf21845574020', // お試し期間
   'method_payment': 'wf21845574021', // 支払い
+  'contract_period_start': 'wf21845574022-1', // 契約期間（開始日）
+  'contract_period_end': 'wf21845574022-2', // 契約期間（終了日）
   // 契約情報2
   'service_fee_sum': 'wf21845574024', // (サービス料金 合計)
   // その他
@@ -209,11 +211,14 @@ $(function() {
     $(`[name=${target['method_payment']}]`).prop('disabled', true);
     if (/無料/.test($(this).val())) {
       registerNextMonthDate();
+      $(`[name=${target['trial_period']}]`).prop('disabled', false);
       $(`[name=${target['method_payment']}]:eq(2)`).prop('disabled', false).prop('checked', true);
+      $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', true).val('');
     } else {
-      $(`[name=${target['trial_period']}]`).val('');
+      $(`[name=${target['trial_period']}]`).prop('disabled', true).val('');
       $(`[name=${target['method_payment']}]:eq(0)`).prop('disabled', false).prop('checked', true);
       $(`[name=${target['method_payment']}]:eq(1)`).prop('disabled', false);
+      $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', false);
     }
   });
   // 製品ボタン
