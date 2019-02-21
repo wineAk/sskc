@@ -168,10 +168,26 @@ article.resp li.label {
 ************************************/
 .account-list,
 .service-list {
-    position: relative;
-    height: 40px;
-    font-size: 0;
+  position: relative;
+  height: 40px;
+  font-size: 0;
 }
+
+article.resp form li.clr.account-list,
+article.resp form li.clr.service-list {
+  margin: 0;
+}
+
+article.resp form li.clr.service-list {
+  display: none;
+}
+
+article.resp form li.clr.account-list.sum-list,
+article.resp form li.clr.service-list.service-list-plan {
+  padding-bottom: 2px;
+  margin-bottom: 6px;
+}
+
 .account-list>*,
 .service-list>* {
   background-color: rgba(255, 255, 255, 0.85);
@@ -179,23 +195,32 @@ article.resp li.label {
   top: 0;
   bottom: 0;
 }
+
+.account-list.sum-list>*,
+.service-list.service-list-plan>* {
+  bottom: 2px;
+}
+
 .account-list>label,
 .service-list>label {
   left: 6px;
 }
+
 .account-list>div,
 .service-list>div {
   right: 0;
 }
+
 article.resp form li.clr.account-list label.col.span_3,
 article.resp form li.clr.service-list label.col.span_3 {
-    width: 250px;
-    padding: 5px 0 0 5px;
+  width: 250px;
+  padding: 5px 0 0 5px;
 }
+
 article.resp form li.clr.account-list div.col.span_9,
 article.resp form li.clr.service-list div.col.span_9 {
-       width:calc( 100% - 250px - 6px );
-    padding: 5px 0 0;
+  width: calc(100% - 250px - 6px);
+  padding: 5px 0 0;
 }
 
 /************************************
