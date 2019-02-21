@@ -151,7 +151,7 @@ function switchMembershipType() {
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true).prop('checked', false);
   $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', true);
-  $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger').css('display', 'none');
+  $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next('.ui-datepicker-trigger').css('display', 'none');
   if (val == null) {
     $(`[name=${target['trial_period']}]`).val('');
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).val('');
@@ -160,13 +160,13 @@ function switchMembershipType() {
     $(`[name=${target['trial_period']}]`).prop('disabled', false);
     $(`[name=${target['method_payment']}]:eq(2)`).prop('disabled', false).prop('checked', true);
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).val('');
-    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger').css('display', 'inline');
+    $(`[name=${target['trial_period']}]`).next('.ui-datepicker-trigger').css('display', 'inline');
   } else if (/有料/.test(val)) {
     $(`[name=${target['trial_period']}]`).val('');
     $(`[name=${target['method_payment']}]:eq(0)`).prop('disabled', false).prop('checked', true);
     $(`[name=${target['method_payment']}]:eq(1)`).prop('disabled', false);
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', false);
-    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger').css('display', 'inline');
+    $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next('.ui-datepicker-trigger').css('display', 'inline');
   }
 }
 // --------------------
