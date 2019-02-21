@@ -148,6 +148,10 @@ function removeNonNumber(str) {
 // 有料・無料選択の切り替え処理
 function switchMembershipType() {
   const val = $(`[name=${target['membership_type']}]:checked`).val();
+  const datepickerCss = {
+    'display': 'inline',
+    'cursor': 'auto'
+  };
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true).prop('checked', false);
   $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', true);
@@ -155,21 +159,21 @@ function switchMembershipType() {
   if (val == null) {
     $(`[name=${target['trial_period']}]`).val('');
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).val('');
-    $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css('display', 'inline');
+    $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css(datepickerCss);
   } else if (/無料/.test(val)) {
     registerNextMonthDate();
     $(`[name=${target['trial_period']}]`).prop('disabled', false);
     $(`[name=${target['method_payment']}]:eq(2)`).prop('disabled', false).prop('checked', true);
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).val('');
-    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css('display', 'inline');
-    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css('display', 'inline');
+    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css(datepickerCss);
+    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css(datepickerCss);
   } else if (/有料/.test(val)) {
     $(`[name=${target['trial_period']}]`).val('');
     $(`[name=${target['method_payment']}]:eq(0)`).prop('disabled', false).prop('checked', true);
     $(`[name=${target['method_payment']}]:eq(1)`).prop('disabled', false);
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', false);
-    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css('display', 'inline');
-    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css('display', 'inline');
+    $(`[name=${target['trial_period']}]`).nextAll('.ui-datepicker-trigger[alt=""]').css(datepickerCss);
+    $(`[name=${target['contract_period_start']}]`).nextAll('.ui-datepicker-trigger[alt="..."]').css(datepickerCss);
   }
 }
 // --------------------
@@ -184,9 +188,9 @@ $(function() {
     const btn = service[i].button;
     const clr = service[i].color;
     if (id === 'works') {
-      styleHtml += `[data-service="${id}"] {background:linear-gradient(${clr});}`;
+      styleHtml += `[data-service="${id}"]{background:linear-gradient(${clr});}`;
     } else {
-      styleHtml += `[data-service="${id}"] {background-color:${clr};}`;
+      styleHtml += `[data-service="${id}"]{background-color:${clr};}`;
     }
     buttonHtml += `<div data-service="${id}">${btn}</div>`;
   }
@@ -217,7 +221,7 @@ $(function() {
   $(`[name=${target['account_num']}], [name=${target['account_fee_sum']}], [name=${target['service_fee_sum']}], [name=${target['saaske_fee']}], [name=${target['saaske_fee_tax']}]`).prop('readonly', true);
   // ダミーのカレンダーを追加
   $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next()
-    .after('<img class="ui-datepicker-trigger" src="https://wineak.github.io/sskc/wf/accountCreatingPage/calendar.gif" alt="" title="" style="display:none;cursor:auto;">');
+    .after('<img class="ui-datepicker-trigger" src="https://wineak.github.io/sskc/wf/accountCreatingPage/calendar.gif" alt="" title="" style="display:none;">');
   // 諸々初回処理
   automaticCalculation();
   registerPassword();
