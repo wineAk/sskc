@@ -186,7 +186,7 @@ $(function() {
       return null;
     })();
     if (serviceName == null) {
-      if (/合計/.test(labelText)) $(this).addClass('sum-list').wrapInner('<div>');
+      if (/合計/.test(labelText)) $(this).addClass('sum-list');
       if (/アカウント/.test(labelText)) $(this).attr('data-service', '').addClass('account-list').wrapInner('<div>');
     } else {
       $(this).data('service', serviceName).attr('data-service', serviceName).addClass('service-list').wrapInner('<div>');
