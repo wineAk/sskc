@@ -252,3 +252,7 @@ article.resp .sum-list input[type="text"] {
 #next_month {
   font-size: 10px;
 }
+
+[data-service] .f_comb {
+  display: inline;
+}

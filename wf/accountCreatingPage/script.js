@@ -270,4 +270,11 @@ $(window).load(function() {
     targetDom.stop(true, true).fadeToggle(1000); // 入力フォームの開閉
     automaticCalculation(); // 自動計算処理
   });
+  // メールアドレス
+  $(`[name=${target['sales_person']}]`).on('change', function() {
+    const val = $(this).val();
+    const txt = email[val];
+    const mail = `${txt}@interpark.co.jp`;
+    $(`[name=${target['sales_person_email']}]`).val(mail);
+  });
 });
