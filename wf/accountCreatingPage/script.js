@@ -145,6 +145,23 @@ function removeNonNumber(str) {
   const num = Number(rep);
   return num;
 }
+function switchMembershipType(val) {
+  $(`[name=${target['trial_period']}]`).prop('disabled', true);
+  $(`[name=${target['method_payment']}]`).prop('disabled', true);
+  $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', true);
+  if (val == null || /無料/.test(val)) {
+    registerNextMonthDate();
+    $(`[name=${target['membership_type']}]:eq(0)`).prop('checked', true);
+    $(`[name=${target['trial_period']}]`).prop('disabled', false);
+    $(`[name=${target['method_payment']}]:eq(2)`).prop('disabled', false).prop('checked', true);
+    $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).val('');
+  } else {
+    $(`[name=${target['trial_period']}]`).val('');
+    $(`[name=${target['method_payment']}]:eq(0)`).prop('disabled', false).prop('checked', true);
+    $(`[name=${target['method_payment']}]:eq(1)`).prop('disabled', false);
+    $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', false);
+  }
+}
 // --------------------
 // 各種処理
 // --------------------
@@ -194,6 +211,7 @@ $(function() {
   automaticCalculation();
   registerPassword();
   registerNextMonthDate();
+  switchMembershipType();
   // 自動計算
   $('.form_list input').on('input keyup blur', function() {
     automaticCalculation();
@@ -208,18 +226,8 @@ $(function() {
   });
   // 無料・有料会員
   $(`[name=${target['membership_type']}]`).on('change', function() {
-    $(`[name=${target['method_payment']}]`).prop('disabled', true);
-    if (/無料/.test($(this).val())) {
-      registerNextMonthDate();
-      $(`[name=${target['trial_period']}]`).prop('disabled', false);
-      $(`[name=${target['method_payment']}]:eq(2)`).prop('disabled', false).prop('checked', true);
-      $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', true).val('');
-    } else {
-      $(`[name=${target['trial_period']}]`).prop('disabled', true).val('');
-      $(`[name=${target['method_payment']}]:eq(0)`).prop('disabled', false).prop('checked', true);
-      $(`[name=${target['method_payment']}]:eq(1)`).prop('disabled', false);
-      $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).prop('disabled', false);
-    }
+    const val = $(this).val();
+    switchMembershipType(val);
   });
   // 製品ボタン
   $('#service div').on('click', function() {
