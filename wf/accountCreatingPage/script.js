@@ -147,6 +147,7 @@ function removeNonNumber(str) {
 }
 // 有料・無料選択の切り替え処理
 function switchMembershipType() {
+  if (!$('#input-page').length) return;
   const val = $(`[name=${target['membership_type']}]:checked`).val();
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true).prop('checked', false);
@@ -216,7 +217,7 @@ $(function() {
   // 合計を表示させる場所はreadonlyに
   $(`[name=${target['account_num']}], [name=${target['account_fee_sum']}], [name=${target['service_fee_sum']}], [name=${target['saaske_fee']}], [name=${target['saaske_fee_tax']}]`).prop('readonly', true);
   // ダミーのカレンダーを追加
-  $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next().after('<img class="ui-datepicker-trigger" src="https://wineak.github.io/sskc/wf/accountCreatingPage/calendar.gif" alt=" " title="" style="display:none;">');
+  if ($('#input-page').length) $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next().after('<img class="ui-datepicker-trigger" src="https://wineak.github.io/sskc/wf/accountCreatingPage/calendar.gif" alt=" " title="" style="display:none;">');
   // 諸々初回処理
   automaticCalculation();
   registerPassword();
