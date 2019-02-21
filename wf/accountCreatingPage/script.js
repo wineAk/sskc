@@ -150,7 +150,7 @@ function automaticCalculation() {
 }
 // 消費税計算 (切り捨てfloor, 切り上げceil, 四捨五入round)
 function taxCalculation(price) {
-  const taxVal = $(`[name=${target['tax_rate']}]`).val();
+  const taxVal = $(`[name=${target['tax_rate']}]:checked`).val();
   const tax = 1 + removeNonNumber(taxVal) / 100;
   const taxIncluded = Math.floor(price * tax);
   return taxIncluded;
