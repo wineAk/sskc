@@ -172,7 +172,7 @@ function switchMembershipType() {
 // --------------------
 // 各種処理
 // --------------------
-$(function() {
+$(window).load(function(){
   // style＆製品ボタンを書き出す
   let styleHtml = '';
   let buttonHtml = '';

@@ -249,10 +249,6 @@ article.resp .sum-list input[type="text"] {
   background-color: transparent;
 }
 
-.ui-datepicker-trigger[alt=" "] {
-  cursor: auto;
-}
-
 #next_month {
   font-size: 10px;
 }
