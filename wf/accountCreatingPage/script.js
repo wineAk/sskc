@@ -147,7 +147,6 @@ function removeNonNumber(str) {
 }
 // 有料・無料選択の切り替え処理
 function switchMembershipType() {
-  if (!($('#input-page').length)) return;
   const val = $(`[name=${target['membership_type']}]:checked`).val();
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true).prop('checked', false);
@@ -206,22 +205,24 @@ $(function() {
     })();
     if (serviceName == null) {
       if (/合計/.test(labelText)) $(this).addClass('sum-list');
-      if (/アカウント/.test(labelText)) $(this).attr('data-service', '').addClass('account-list').wrapInner('<div>');
+      if (/アカウント/.test(labelText)) $(this).attr('data-service', '').addClass('account-list');
     } else {
-      $(this).data('service', serviceName).attr('data-service', serviceName).addClass('service-list').wrapInner('<div>');
+      $(this).data('service', serviceName).attr('data-service', serviceName).addClass('service-list');
       if (/プラン/.test(labelText)) $(this).addClass('service-list-plan');
       // inputに記入あったら表示させておく
       if ($(this).find('input').val() !== '') $(`[data-service=${serviceName}].service-list`).css('display', 'list-item');
     }
   });
-  // 合計を表示させる場所はreadonlyに
-  $(`[name=${target['account_num']}], [name=${target['account_fee_sum']}], [name=${target['service_fee_sum']}], [name=${target['saaske_fee']}], [name=${target['saaske_fee_tax']}]`).prop('readonly', true);
-  // ダミーのカレンダーを追加
-  if ($('#input-page').length) $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next().after('<img class="ui-datepicker-trigger" src="https://wineak.github.io/sskc/wf/accountCreatingPage/calendar.gif" alt=" " title="" style="display:none;">');
-  // 諸々初回処理
-  automaticCalculation();
-  registerPassword();
-  switchMembershipType();
+  if ($('#input-page').length) {
+    // 合計を表示させる場所はreadonlyに
+    $(`[name=${target['account_num']}], [name=${target['account_fee_sum']}], [name=${target['service_fee_sum']}], [name=${target['saaske_fee']}], [name=${target['saaske_fee_tax']}]`).prop('readonly', true);
+    // ダミーのカレンダーを追加
+    $(`[name=${target['trial_period']}], [name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next().after('<img class="ui-datepicker-trigger" src="https://wineak.github.io/sskc/wf/accountCreatingPage/calendar.gif" alt=" " title="" style="display:none;">');
+    // 諸々初回処理
+    automaticCalculation();
+    registerPassword();
+    switchMembershipType();
+  }
   // 自動計算
   $('.form_list input').on('input keyup blur', function() {
     automaticCalculation();
