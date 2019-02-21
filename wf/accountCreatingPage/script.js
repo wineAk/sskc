@@ -145,7 +145,7 @@ function removeNonNumber(str) {
   const num = Number(rep);
   return num;
 }
-function switchMembershipType(val) {
+function switchMembershipType() {
   const val = $(`[name=${target['membership_type']}]`).val();
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true);
