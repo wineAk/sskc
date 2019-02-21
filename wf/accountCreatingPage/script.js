@@ -147,7 +147,7 @@ function removeNonNumber(str) {
 }
 // 有料・無料選択の切り替え処理
 function switchMembershipType() {
-  if (!$('#input-page').length) return;
+  if (!($('#input-page').length)) return;
   const val = $(`[name=${target['membership_type']}]:checked`).val();
   $(`[name=${target['trial_period']}]`).prop('disabled', true);
   $(`[name=${target['method_payment']}]`).prop('disabled', true).prop('checked', false);

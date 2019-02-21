@@ -220,7 +220,7 @@ article.resp .sum-list input[type="text"] {
 }
 
 .ui-datepicker-trigger[alt=" "] {
-  color: auto;
+  cursor: auto;
 }
 
 #next_month {
