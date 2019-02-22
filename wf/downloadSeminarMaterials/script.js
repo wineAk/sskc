@@ -22,7 +22,7 @@ $(function() {
     $('.document input').prop('checked', false); // 全てのチェックを外す
     $('article.resp form li.clr.document div.col.span_9 label').css('display', 'none'); // 全ての項目を非表示
     // ボタンごとにチェックを入れる
-    var trg = $('input[value*="www.saaske.com/document/' + name + '"]');
+    var trg = $('input[value="' + name + '"]');
     trg.prop('checked', true); // チェックを付ける
     trg.parent().stop(true, true).fadeIn(1000); // 項目を表示する
   });
@@ -68,7 +68,7 @@ function checkbox(data) {
     $('.document .input label').each(function() {
       var html = $(this).html();
       var text = $(this).text();
-      var urlReg = new RegExp(' https?:\/\/www\.saaske\.com\/document\/' + name);
+      var urlReg = new RegExp(' ' + name);
       if (urlReg.test(text)) {
         var titleRep = title.replace(/<.+>/g, '');
         var repHtml = html.replace(urlReg, titleRep);
@@ -79,7 +79,7 @@ function checkbox(data) {
     $('.document .input').each(function() {
       var html = $(this).html();
       var text = $(this).text();
-      var urlReg = new RegExp('https?:\/\/www\.saaske\.com\/document\/' + name);
+      var urlReg = new RegExp(name);
       if (urlReg.test(text)) {
         var titleRep = title.replace(/<.+>/g, '');
         var repHtml = html.replace(urlReg, titleRep);
