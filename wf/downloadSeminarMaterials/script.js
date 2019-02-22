@@ -65,21 +65,16 @@ function checkbox(data) {
   var name = data.name;
   var title = data.title;
   if ($('.document .input label').length) {
-    $('.document .input label').each(function() {
-      var html = $(this).html();
-      var text = $(this).text().replace(/\s/, '');
-      if (name === text) {
-        var htmlMatch = html.match(/(<.+>)/);
-        var htmlNew = htmlMatch[1] + title;
-        $(this).html(htmlNew);
-      }
-    });
+    // 入力画面
+    var trg = $('.document input[value="' + name + '"]').parent();
+    var htmlData = trg.html();
+    var htmlCode = htmlData.match(/(<.+>)/)[1] + title;
+    trg.html(htmlCode);
   } else {
-    $('.document .input').each(function() {
-      var html = $(this).html();
-      var nameReg = new RegExp(name);
-      var htmlNew = html.replace(nameReg, title);
-      $(this).html(htmlNew);
-    });
+    // 確認画面
+    var trg = $('.document .input');
+    var htmlData = trg.html();
+    var htmlCode = htmlData.replace(new RegExp(name), title);
+    trg.html(htmlCode);
   }
 }
