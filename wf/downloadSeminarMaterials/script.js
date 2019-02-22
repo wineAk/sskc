@@ -69,7 +69,9 @@ function checkbox(data) {
       var html = $(this).html();
       var text = $(this).text().replace(/\s/, '');
       if (name === text) {
-        $(this).text(title);
+        var htmlMatch = html.match(/<.+>/)[1];
+        var htmlNew = htmlMatch + title
+        $(this).html(htmlNew);
       }
     });
   } else {
