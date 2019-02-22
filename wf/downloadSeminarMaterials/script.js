@@ -67,12 +67,9 @@ function checkbox(data) {
   if ($('.document .input label').length) {
     $('.document .input label').each(function() {
       var html = $(this).html();
-      var text = $(this).text();
-      var urlReg = new RegExp(' ' + name);
-      if (urlReg.test(text)) {
-        var titleRep = title.replace(/<.+>/g, '');
-        var repHtml = html.replace(urlReg, titleRep);
-        $(this).html(repHtml);
+      var text = $(this).text().replace(/\s/, '');
+      if (name === text) {
+        $(this).text(title);
       }
     });
   } else {
