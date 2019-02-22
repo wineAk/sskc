@@ -68,12 +68,14 @@ function checkbox(data) {
     // 入力画面
     var trg = $('.document input[value="' + name + '"]').parent();
     var htmlData = trg.html();
+    if (htmlData == null) return;
     var htmlCode = htmlData.match(/(<.+>)/)[1] + title;
     trg.html(htmlCode);
   } else {
     // 確認画面
     var trg = $('.document .input');
     var htmlData = trg.html();
+    if (htmlData == null) return;
     var htmlCode = htmlData.replace(new RegExp(name), title);
     trg.html(htmlCode);
   }
