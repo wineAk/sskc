@@ -77,13 +77,10 @@ function checkbox(data) {
   } else {
     $('.document .input').each(function() {
       var html = $(this).html();
-      var text = $(this).text();
-      var urlReg = new RegExp(name);
-      if (urlReg.test(text)) {
-        var titleRep = title.replace(/<.+>/g, '');
-        var repHtml = html.replace(urlReg, titleRep);
-        $(this).html(repHtml);
-      }
+      var text = $(this).text().replace(/\s/, '');
+      var nameReg = new RegExp(name);
+      var textReg = text.replace(nameReg, title);
+      $(this).text(textReg);
     });
   }
 }
