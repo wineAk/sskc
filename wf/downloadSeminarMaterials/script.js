@@ -77,10 +77,9 @@ function checkbox(data) {
   } else {
     $('.document .input').each(function() {
       var html = $(this).html();
-      var text = $(this).text().replace(/\s/, '');
       var nameReg = new RegExp(name);
-      var textReg = text.replace(nameReg, title);
-      $(this).text(textReg);
+      var htmlNew = html.replace(nameReg, title);
+      $(this).html(htmlNew);
     });
   }
 }
