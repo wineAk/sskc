@@ -65,7 +65,7 @@ function checkbox(data) {
   var name = data.name;
   var title = data.title;
   if (name === '') return;
-  if ($('.document .input label').length) {
+  if ($('#docs').length) {
     // 入力画面
     var trg = $('.document input[value="' + name + '"]').parent();
     var htmlData = trg.html();
