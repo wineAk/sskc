@@ -93,7 +93,8 @@ const email = {
   '佐藤': 't-sato',
   '南': 'minami',
   '西教': 'yuko',
-  '池田': 'ikeda'
+  '池田': 'ikeda',
+  '安藤': 'aya',
 }
 // パスワード生成
 function registerPassword() {
