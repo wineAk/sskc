@@ -86,7 +86,7 @@ $(function() {
             var diff = data[i].diff;
             var tag = (function() {
               // 経過日数（一昨日2, 昨日1, 今日0, 明日-1, 明後日-2）
-              if (diff >= -6) return 'disabled="disabled"';
+              if (diff >= -13) return 'disabled="disabled"';
               return '';
             })();
             // 曜日（日0, 月1, 火2, 水3, 木4, 金5, 土6）
