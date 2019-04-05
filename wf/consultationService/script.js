@@ -77,20 +77,22 @@ $(function() {
         var listsDateHtml = '';
         for (var key in listsDate) {
           var listDate = listsDate[key];
-          var label = listDate.label;
-          var data = listDate.data;
-          var html = '<optgroup label="' + label + '">';
-          for (var i = 0, n = data.length; i < n; i++) {
-            var date = data[i].date;
-            var format = data[i].format;
-            var diff = data[i].diff;
+          var listsDateLabel = listDate.label;
+          var listsDateData = listDate.data;
+          var html = '<optgroup label="' + listsDateLabel + '">';
+          for (var i = 0, n = listsDateData.length; i < n; i++) {
+            var date = listsDateData[i].date;
+            var format = listsDateData[i].format;
+            var diff = listsDateData[i].diff;
             var tag = (function() {
               // 経過日数（一昨日2, 昨日1, 今日0, 明日-1, 明後日-2）
               if (diff >= -13) return 'disabled="disabled"';
+              // 祝日
+              if (data.holiday[date]) return 'disabled="disabled"';
               return '';
             })();
             // 曜日（日0, 月1, 火2, 水3, 木4, 金5, 土6）
-            if (data[i].day === 5) html += '<option value="' + date + '" label="' + format + '" ' + tag + '>' + format + '</option>';
+            if (listsDateData[i].day === 5) html += '<option value="' + date + '" label="' + format + '" ' + tag + '>' + format + '</option>';
           }
           listsDateHtml += html + '</optgroup>';
         }
