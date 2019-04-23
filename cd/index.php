@@ -33,7 +33,7 @@
   ob_start("phpMinify");
   // 諸々の処理
   $query = isset($_GET["s"]);
-  if($query && $_GET["s"] == $key){
+  if($query && $_GET["s"] == "006404"){
     require_once "library/list.php";
   } else {
     require_once "library/download.php";
