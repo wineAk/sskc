@@ -1,22 +1,17 @@
 <?php
-  require_once "_setting.php";
-  require_once "_list.php";
-  $dir = "./{$master}/";
-  $file_list = getApkList($dir);
-  list($file_name, $file_last) = getApkLast($file_list);
-  $file_ver  = "現在のバージョンは<strong id=\"version\">{$file_name}</strong>です。";
+  http_response_code(404);
+  header("Location: /cd");
+  exit;
 ?>
-<meta charset="utf-8">
-<link rel="shortcut icon" href="files/icon.png">
-<link rel="stylesheet" href="files/style.css">
-<title>Cloud Scan QRコード</title>
-<div id="qrpage">
-  <h2>Cloud Scanのダウンロード</h2>
-  <p>以下のQRより、ダウンロードを行えます。</p>
-  <div id="qrcode"></div>
-  <p><?php print $file_ver; ?></p>
-  <p>再インストールの手順マニュアルは、<br><a href="files/reinstall.pdf" target="_blank">こちら</a>よりダウンロードして下さい。</p>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="files/jquery.qrcode.min.js"></script>
-<script src="files/script.js"></script>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>エラーが発生しました</title>
+  <script>location.replace("http://www.saaske.com/");</script>
+</head>
+<body>
+  <h2>エラーが発生しました</h2>
+  <p>不正なコードが検出されたため、システムを強制終了しました。</p>
+</body>
+</html>
