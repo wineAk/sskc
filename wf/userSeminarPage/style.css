@@ -5,12 +5,13 @@
 **
 ************************************/
 strong.marker {
-  background-image: linear-gradient(transparent 60%,#feb5c9 50%);
+  background-image: linear-gradient(transparent 60%, #feb5c9 50%);
   font-weight: bold;
   padding: 0 5px;
 }
+
 strong.marker_c {
-  background-image: linear-gradient(transparent 60%,rgba(254, 181, 201, 0.45) 50%);
+  background-image: linear-gradient(transparent 60%, rgba(254, 181, 201, 0.45) 50%);
   padding: 0 1px;
 }
 
@@ -24,9 +25,11 @@ strong.marker_c {
 #seminar_form .m0 {
   margin: 0;
 }
+
 #seminar_form .mb0 {
   margin-bottom: 0;
 }
+
 #seminar_form .mt0 {
   margin-top: 0;
 }
@@ -40,9 +43,11 @@ strong.marker_c {
 #seminar_form .left_align {
   text-align: left;
 }
+
 #seminar_form .right_align {
   text-align: right;
 }
+
 #seminar_form .center_align {
   text-align: center;
 }
@@ -58,15 +63,19 @@ strong.marker_c {
 #seminar_form .tiny_font {
   font-size: 8px;
 }
+
 #seminar_form .small_font {
   font-size: 12px;
 }
+
 #seminar_form .medium_font {
   font-size: 16px;
 }
+
 #seminar_form .large_font {
   font-size: 24px;
 }
+
 #seminar_form .enormous_font {
   font-size: 32px;
 }
@@ -79,7 +88,6 @@ strong.marker_c {
 **
 ************************************/
 /*@import url('https://wineak.github.io/sskc/wf/userSeminarPage/materialize.css');*/
-
 /************************************
 ** その他
 **
@@ -88,6 +96,7 @@ strong.marker_c {
 .wgt-heading__inner {
   display: none;
 }
+
 .wgt-heading__inner_sub {
   max-width: 1000px;
   margin: 0 auto;
@@ -112,52 +121,63 @@ strong.marker_c {
   /*border-bottom: 1px solid #d4d1cf;*/
   text-align: center;
 }
+
 /* パノラマ */
 .tour {
   margin-top: 10px;
   max-width: 518px;
 }
+
 .tour p {
   text-align: left;
   padding: 5px 0;
   color: #777;
   font-size: 11px;
 }
+
 div#pano {
   width: 100%;
   height: 180px
 }
+
 /* 各種微調整 */
 #seminar_form dl {
   margin: 0;
 }
+
 #seminar_form table {
   border-top-style: none;
   border-collapse: collapse;
 }
+
 #seminar_form table th {
   width: 200px;
 }
+
 #seminar_form hr {
   display: block;
   border: 0;
   height: 0;
   border-bottom: 1px solid #DCDCDC;
 }
+
 /* 「問い合わせ先」用 */
 #seminar_form .table-header:first-child {
   font-weight: normal;
   border-bottom: none;
 }
+
 /* フォーム内のタイトル非表示 */
 .wgt-form__heading {
   display: none;
 }
+
 /* 余分なスペースを削除 */
 .base-page {
   font-size: 0;
 }
-.base-page > * {
+
+.base-page>* {
   font-size: 1rem;
 }
 
@@ -166,48 +186,59 @@ div#pano {
 **
 ************************************/
 @media screen and (max-width: 768px) {
+
   /* brタグを無効化 */
   #seminar_form br {
     display: none;
   }
+
   /* パノラマをモバイル向けに調整 */
   .tour {
     max-width: 100%
   }
+
   div#pano {
     width: 100%;
     height: 100%;
   }
+
   iframe.pano {
     width: 100%;
     height: 100%;
   }
+
   /* テーブルをモバイル向けに調整 */
   #seminar_form table,
   #seminar_form table th,
   #seminar_form table td {
     border: none;
   }
+
   #seminar_form table th,
   #seminar_form table td {
     display: block;
     width: 100%;
   }
+
   #seminar_form table th {
     background: #d0d0d0;
   }
+
   #seminar_form table th.header,
   #seminar_form table th.table-header {
     background: #fff;
   }
+
   #seminar_form table td.header,
   #seminar_form table td.table-header {
     padding: 0;
   }
+
   /* その他モバイル向けに調整 */
   #seminar_form {
     margin-right: 20px;
   }
+
   #seminar_form iframe.googlemap {
     width: 100%;
   }
@@ -224,6 +255,7 @@ article.resp input[type="radio"] {
   outline: 0;
   vertical-align: middle;
 }
+
 /* ラジオボタン */
 article.resp input[type="radio"] {
   position: relative;
@@ -237,6 +269,7 @@ article.resp input[type="radio"] {
   -moz-appearance: none;
   appearance: none;
 }
+
 article.resp input[type="radio"]::before {
   position: absolute;
   display: inline-block;
@@ -248,6 +281,7 @@ article.resp input[type="radio"]::before {
   -webkit-transform: scale(0, 0);
   transform: scale(0, 0);
 }
+
 article.resp input[type="radio"]:checked::before {
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
   transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
@@ -265,9 +299,11 @@ article.resp form li.clr div.col.span_9 {
   margin: 4px 0 0 40px;
   padding-right: 80px;
 }
+
 article.resp form li label.span_3.required {
   position: relative;
 }
+
 .required::before {
   position: absolute;
   top: 0;
@@ -279,14 +315,17 @@ article.resp form li label.span_3.required {
   padding: 2px 5px;
   margin-right: 5px;
 }
+
 @media screen and (max-width: 48em) {
   .required::before {
     top: -5px;
   }
 }
+
 article.resp form li.clr label.col.span_3.required:after {
   content: "";
 }
+
 /* フォーカス周り */
 article.resp input,
 article.resp textarea,
@@ -298,28 +337,34 @@ article.resp select {
   transition: all .3s;
   transition-property: box-shadow;
 }
+
 article.resp input:focus,
 article.resp textarea:focus,
 article.resp select:focus {
   box-shadow: 0 0 8px #c5c5c5;
 }
+
 article.resp .required+.input input,
 article.resp .required+.input textarea,
 article.resp .required+div.col.span_9 select {
   border-color: #c9242f;
 }
+
 article.resp .required+.input input:focus,
 article.resp .required+.input textarea:focus,
 article.resp .required+.input select:focus {
   box-shadow: 0 0 8px #c9242f;
 }
+
 .wgt-form input[type="checkbox"]:checked:after {
   width: 6px;
   height: 12px;
 }
+
 article.resp .required+.input input[type="checkbox"]:checked:after {
   border-color: #c9242f;
 }
+
 article.resp .required+.input input[type="radio"]::before {
   background: #c9242f;
 }
@@ -333,6 +378,7 @@ article.resp .required+.input input[type="radio"]::before {
 .btn-arrow::after {
   display: none;
 }
+
 /* 新たに矢印を作成（対象を.btn-arrowから.btn-arrow aに変更） */
 .btn-arrow a::before {
   display: block;
@@ -349,9 +395,11 @@ article.resp .required+.input input[type="radio"]::before {
   box-sizing: border-box;
   border-radius: 100%;
 }
+
 .btn-arrow a:hover::before {
   background-color: #80B13F;
 }
+
 .btn-arrow a::after {
   display: block;
   content: '';
@@ -366,6 +414,7 @@ article.resp .required+.input input[type="radio"]::before {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+
 .btn-arrow a:hover::after {
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -380,8 +429,10 @@ article.resp input[type="checkbox"],
 article.resp input[type="radio"] {
   border: none\9;
 }
+
 /* Edge*/
 @supports (-ms-ime-align: auto) {
+
   article.resp input[type="checkbox"],
   article.resp input[type="radio"] {
     border: none;
