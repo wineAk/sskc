@@ -256,6 +256,75 @@ article.resp input[type="radio"]:checked::before {
 }
 
 /************************************
+** 項目必須＆入力時のフォーカス
+**
+************************************/
+article.resp form li.clr label.col.span_3,
+article.resp form li.clr div.col.span_9 {
+  width: 100%;
+  margin: 4px 0 0 40px;
+  padding-right: 80px;
+}
+article.resp form li label.span_3.required {
+  position: relative;
+}
+.required::before {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  content: "必須";
+  background: rgba(201, 36, 47, 0.1);
+  color: #c9242f;
+  font-size: 12px;
+  padding: 2px 5px;
+  margin-right: 5px;
+}
+@media screen and (max-width: 48em) {
+  .required::before {
+    top: -5px;
+  }
+}
+article.resp form li.clr label.col.span_3.required:after {
+  content: "";
+}
+/* フォーカス周り */
+article.resp input,
+article.resp textarea,
+article.resp select {
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  outline: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  transition-property: box-shadow;
+}
+article.resp input:focus,
+article.resp textarea:focus,
+article.resp select:focus {
+  box-shadow: 0 0 8px #c5c5c5;
+}
+article.resp .required+.input input,
+article.resp .required+.input textarea,
+article.resp .required+div.col.span_9 select {
+  border-color: #c9242f;
+}
+article.resp .required+.input input:focus,
+article.resp .required+.input textarea:focus,
+article.resp .required+.input select:focus {
+  box-shadow: 0 0 8px #c9242f;
+}
+.wgt-form input[type="checkbox"]:checked:after {
+  width: 6px;
+  height: 12px;
+}
+article.resp .required+.input input[type="checkbox"]:checked:after {
+  border-color: #c9242f;
+}
+article.resp .required+.input input[type="radio"]::before {
+  background: #c9242f;
+}
+
+/************************************
 ** Bug Fixed
 **
 ************************************/

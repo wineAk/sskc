@@ -38,7 +38,17 @@
     <div class="container">
       <div class="row my-3">
         <div class="col">
-          
+          <div class="alert alert-danger" role="alert">
+            このページをお客さんに教えないで下さい。<br class="d-none d-md-block">
+            もし教える必要がある場合は「
+            <a href="http://secure-link.jp/wf/?c=wf26359724" class="alert-link">Cloud Scanのダウンロード</a>
+            」を利用してください。
+          </div>
+          <div class="alert alert-danger" role="alert">
+            最新版のアプリをダウンロードする場合も、基本的に「
+            <a href="http://secure-link.jp/wf/?c=wf26359724" class="alert-link">Cloud Scanのダウンロード</a>
+            」を利用してください。
+          </div>
         </div>
       </div>
       <div class="row my-3">
