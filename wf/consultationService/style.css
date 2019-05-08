@@ -100,67 +100,6 @@ article.resp form li.clr div.col.span_9 {
   width: 100%;
 }
 
-/* 項目必須 */
-article.resp form li label.span_3.required {
-  position: relative;
-  margin-left: 40px;
-}
-
-.required::before {
-  position: absolute;
-  top: 0;
-  left: -40px;
-  content: "必須";
-  background: rgba(201, 36, 47, 0.1);
-  color: #c9242f;
-  font-size: 12px;
-  padding: 2px 5px;
-  margin-right: 5px;
-}
-
-@media screen and (max-width: 48em) {
-  .required::before {
-    top: -5px;
-  }
-}
-
-article.resp form li.clr label.col.span_3.required:after {
-  content: "";
-}
-
-article.resp .required+.input input,
-article.resp .required+.input textarea,
-article.resp .required+div.col.span_9 select {
-  border: 1px solid #c9242f;
-}
-
-article.resp .required+.input input:focus,
-article.resp .required+.input textarea:focus,
-article.resp .required+.input select:focus {
-  box-shadow: 0 0 7px #c9242f;
-}
-
-article.resp .required+.input input[type="radio"]::before {
-  background: #c9242f;
-}
-
-/* 入力時のフォーカス */
-article.resp input,
-article.resp textarea,
-article.resp select {
-  border: 1px solid #c5c5c5;
-  border-radius: 4px;
-  outline: none;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-article.resp input:focus,
-article.resp textarea:focus,
-article.resp select:focus {
-  box-shadow: 0 0 7px #c5c5c5;
-}
-
 /* 名前 */
 article.resp form li.clr[data-name] div.col.span_9,
 [data-name] .span_9 span {
@@ -171,6 +110,7 @@ article.resp form li.clr[data-name] div.col.span_9,
 
 [data-name] .span_9 span {
   margin-right: 20px;
+  font-size: 0;
 }
 
 @media screen and (max-width: 48em) {
