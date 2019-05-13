@@ -119,17 +119,20 @@
   <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="files/jquery.qrcode.min.js"></script>
   <script>
-  $(function(){
-    $('#qrcode').qrcode({
-      width: 120,
-      height: 120,
-      text: location.href
+    var swt = {page_key : 'list'};
+    $(function(){
+      $('#qrcode').qrcode({
+        width: 120,
+        height: 120,
+        text: location.href
+      });
+      $('button').on('click', function() {
+        $(this).next().slideToggle('slow');
+      });
     });
-    $('button').on('click', function() {
-      $(this).next().slideToggle('slow');
-    });
-  });
   </script>
+  <script src="//script.secure-link.jp/swt/c00029295.js"></script> <!-- メイン -->
+  <script src="//script.secure-link.jp/swt/c12579546.js"></script> <!-- テスト -->
 </body>
 </html>
 

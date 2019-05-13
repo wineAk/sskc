@@ -20,3 +20,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="files/jquery.qrcode.min.js"></script>
 <script src="files/script.js"></script>
+<script>var swt = {page_key : 'qr'};</script>
+<script src="//script.secure-link.jp/swt/c00029295.js"></script> <!-- メイン -->
+<script src="//script.secure-link.jp/swt/c12579546.js"></script> <!-- テスト -->

@@ -41,10 +41,14 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="files/jquery.qrcode.min.js"></script>
   <script>
+    var swt = {};
+    swt.page_key = 'download';
     $(function(){
       if(window == window.parent) {
+        swt.page_key = 'download (DL Page)';
         $('#download-section').css('display', 'block');
       } else {
+        swt.page_key = 'download (QR Code)';
         $('#qrcode-section').css('display', 'block');
         $('#qrcode').qrcode({
           width: 200,
@@ -54,5 +58,7 @@
       }
     });
   </script>
+  <script src="//script.secure-link.jp/swt/c00029295.js"></script> <!-- メイン -->
+  <script src="//script.secure-link.jp/swt/c12579546.js"></script> <!-- テスト -->
 </body>
 </html>
