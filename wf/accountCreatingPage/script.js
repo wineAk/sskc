@@ -268,6 +268,7 @@ $(window).load(function() {
     if (targetDom.data('open')) {
       targetDom.data('open', false);
       targetDom.find('input').val('');
+      targetDom.find('select').val('');
     } else {
       targetDom.data('open', true);
       if (targetDom.find('input').val() === '') targetDom.find('input').val('1');
