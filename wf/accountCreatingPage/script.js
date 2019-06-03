@@ -224,8 +224,12 @@ $(window).load(function() {
     } else {
       $(this).data('service', serviceName).attr('data-service', serviceName).addClass('service-list');
       if (/プラン/.test(labelText)) $(this).addClass('service-list-plan');
-      // inputに記入あったら表示させておく
-      if ($(this).find('input').val() !== '') $(`[data-service=${serviceName}].service-list`).css('display', 'list-item');
+      // input/select/radioに記入あったら表示させておく
+      const inputVal = $(this).find('input').val() || '';
+      const selectVal = $(this).find('select').val() || '';
+      const radioVal = $(this).find('input[type="radio"]:checked').val() || '';
+      const isVal = inputVal + selectVal + radioVal;
+      if (isVal !== '') $(`[data-service=${serviceName}].service-list`).css('display', 'list-item');
     }
   });
   if ($('#input-page').length) {
