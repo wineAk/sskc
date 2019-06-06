@@ -81,21 +81,6 @@ const target = {
   'saaske_fee': 'wf21845574044', // サスケ 合計
   'saaske_fee_tax': 'wf21845574049' // サスケ 合計 税込み
 };
-// 主担当のメアド
-const email = {
-  '倉本': 'kuramoto',
-  '柴田': 'shibata',
-  '松場': 'matsuba',
-  '赤坂': 'akasaka',
-  '太田': 'oota',
-  '須藤': 'sudou',
-  '河南': 'kawanami',
-  '佐藤': 't-sato',
-  '南': 'minami',
-  '西教': 'yuko',
-  '池田': 'ikeda',
-  '安藤': 'aya',
-}
 // パスワード生成
 function registerPassword() {
   const passNum = removeNonNumber($('#password input[name=num]').val());
