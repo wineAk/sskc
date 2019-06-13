@@ -259,7 +259,7 @@ $(window).load(function() {
     } else {
       targetDom.data('open', true);
       if (findInput.val() === '') findInput.val('1');
-      if (findSelect.val() === '') findSelect.val(findSelect.eq(1).val());
+      if (findSelect.val() === '') findSelect.val(findSelect.find('option').eq(1).val());
     }
     targetDom.stop(true, true).fadeToggle(1000); // 入力フォームの開閉
     automaticCalculation(); // 自動計算処理
