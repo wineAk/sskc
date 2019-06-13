@@ -250,13 +250,16 @@ $(window).load(function() {
   $('#service div').on('click', function() {
     const serviceName = $(this).data('service');
     const targetDom = $(`[data-service=${serviceName}].service-list`);
+    const findInput = targetDom.find('input');
+    const findSelect = targetDom.find('select');
     if (targetDom.data('open')) {
       targetDom.data('open', false);
-      targetDom.find('input').val('');
-      targetDom.find('select').val('');
+      findInput.val('');
+      findSelect.val('');
     } else {
       targetDom.data('open', true);
-      if (targetDom.find('input').val() === '') targetDom.find('input').val('1');
+      if (findInput.val() === '') findInput.val('1');
+      if (findSelect.val() === '') findSelect.val(findSelect.eq(1).val());
     }
     targetDom.stop(true, true).fadeToggle(1000); // 入力フォームの開閉
     automaticCalculation(); // 自動計算処理
