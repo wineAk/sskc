@@ -176,6 +176,9 @@ function switchMembershipType() {
 // 各種処理
 // --------------------
 $(window).load(function() {
+  // IE以外は注意文を非表示
+  const ua = window.navigator.userAgent;
+  if (!/Trident/.test(ua)) $('#ie_alert').addClass('display_none');
   // style＆製品ボタンを書き出す
   let styleHtml = '';
   let buttonHtml = '';

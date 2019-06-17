@@ -223,6 +223,15 @@ article.resp form li.clr.service-list div.col.span_9 {
   padding: 5px 0 0;
 }
 
+/* Worksだけちょっと特殊 */
+[data-service="works"].service-list.service-list-plan {
+  height: 65px;
+}
+
+[data-service="works"] .f_comb {
+  display: block;
+}
+
 /************************************
 ** カラーリング
 ** その他の色はJavaScript側で生成
@@ -230,6 +239,34 @@ article.resp form li.clr.service-list div.col.span_9 {
 ************************************/
 [data-service] {
   background-color: rgba(42, 42, 42, 1);
+}
+
+/************************************
+** 注意文
+**
+************************************/
+.alert_text {
+  background-color: #ffeffe;
+  margin: 0 0 1em 0;
+  padding: 10px;
+  color: #C25338;
+  border: 1px solid #D4440D;
+  line-height: 1.5;
+  clear: both;
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  background-image: url(https://wineak.github.io/sskc/wf/onlineNegotiationManual/alert.png);
+}
+.alert_text span {
+  filter:progid: DXImageTransform.Microsoft.AlphaImageLoader(src='https://wineak.github.io/sskc/wf/onlineNegotiationManual/alert.png', sizingMethod='scale');
+  width: 48px;
+  height:48px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  text-indent: -9999px;
+  float: left;
+  visibility: hidden;
 }
 
 /************************************
@@ -255,4 +292,8 @@ article.resp .sum-list input[type="text"] {
 
 [data-service] .f_comb {
   display: inline;
+}
+
+.display_none {
+  display: none;
 }
