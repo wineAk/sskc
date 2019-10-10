@@ -274,4 +274,12 @@ $(window).load(function() {
     const mail = `${txt}@interpark.co.jp`;
     $(`[name=${target['sales_person_email']}]`).val(mail);
   });
+  // 数字
+  $('.account-list input').on('input keyup blur', function() {
+    var val = $(this).val();
+    var rep = val.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 65248);
+    });
+    $(this).val(rep);
+  });
 });
