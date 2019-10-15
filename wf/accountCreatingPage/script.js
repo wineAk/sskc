@@ -172,6 +172,15 @@ function switchMembershipType() {
     $(`[name=${target['contract_period_start']}], [name=${target['contract_period_end']}]`).next('.ui-datepicker-trigger').css('display', 'inline');
   }
 }
+// 必須項目にする
+function requiredTrialPeriod() {
+  const val = $(`[name=${target['membership_type']}]:checked`).val();
+  const required = /無料/.test(val); // 無料なら必須（true）
+  //const required = $(`[name=${target['trial_period']}]`).prop('required');
+  const $label = $(`[name=${target['trial_period']}]`).parent().prev();
+  $(`[name=${target['trial_period']}]`).prop('required', required); // inputの必須を切り替える
+  (required) ? $label.addClass('required') : $label.removeClass('required'); // CSSの必須を切り替える
+}
 // --------------------
 // 各種処理
 // --------------------
@@ -227,6 +236,7 @@ $(window).load(function() {
     automaticCalculation();
     registerPassword();
     switchMembershipType();
+    requiredTrialPeriod();
   }
   // 自動計算
   $('.form_list input').on('input keyup blur', function() {
@@ -244,6 +254,7 @@ $(window).load(function() {
   // 無料・有料会員
   $(`[name=${target['membership_type']}]`).on('click', function() {
     switchMembershipType();
+    requiredTrialPeriod();
   });
   // 税率
   $(`[name=${target['tax_rate']}]`).on('click', function() {
