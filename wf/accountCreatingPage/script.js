@@ -287,10 +287,10 @@ $(window).load(function() {
   });
   // 数字
   $('.account-list input').on('input keyup blur', function() {
-    var val = $(this).val();
-    var rep = val.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+    const val = $(this).val();
+    const rep = val.replace(/[０-９]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) - 65248);
-    });
+    }).replace(/[^0-9]/g, '').replace(/^0([0-9]+)/g, '$1');
     $(this).val(rep);
   });
 });
