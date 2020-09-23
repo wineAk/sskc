@@ -442,6 +442,82 @@ article.resp .required+.input input[type="radio"]::before {
 }
 
 /************************************
+** モーダル
+**
+************************************/
+.modal {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+}
+
+.modal-close {
+  right: 0;
+  position: absolute;
+  margin: 10px;
+  padding-bottom: 5px;
+  width: 40px;
+  height: 35px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.modal-close:first-child {
+  z-index: 0;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.modal-balloon {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em;
+  padding: 1.5em;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+/*
+.modal-balloon:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -45px;
+  border: 45px solid transparent;
+  border-top: 45px solid #e0edff;
+}
+*/
+.modal-balloon p {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-image {
+  width: 150px;
+  margin-top: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    display: none;
+  }
+}
+
+/************************************
 ** その他
 **
 ************************************/

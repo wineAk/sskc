@@ -1,4 +1,19 @@
 $(function() {
+  var webFormMatch = '';
+  var webFormInputVal = $('input[type=hidden][name="c"]').val();
+  if (webFormInputVal) webFormMatch = webFormInputVal;
+  var webFormImgMatch = $('body > div > img').attr('src').match(/(wf[0-9]+)/);
+  if (webFormImgMatch) webFormMatch = webFormImgMatch[1];
+  $('head > script').each(function() {
+    var src = $(this).attr('src');
+    if (!src) return;
+    var srcMatch = src.match(/(wf[0-9]+)/);
+    if (srcMatch) webFormMatch = srcMatch[1];
+  });
+  if (webFormMatch === '') return;
+  var webFormUrl = 'https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=https%3A%2F%2Fsecure-link.jp%2Fwf%2F%3Fc%3D' + webFormMatch;
+  $('.modal-image').attr('src', webFormUrl);
+  $('.modal').insertAfter('body');
   $('#anchor_inquiryForm > div > div > div > div > article > form > div > input[type=submit]').val('送信する');
   $('[type="file"]').each(function(i) {
     var id = $(this).attr('id');
@@ -74,5 +89,8 @@ $(function() {
       download: fileName,
       href: hrefPath
     });
+  });
+  $('.modal-close').on('click', function() {
+    $('.modal').stop(true, true).fadeToggle(1000);
   });
 });
