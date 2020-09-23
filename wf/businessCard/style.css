@@ -20,6 +20,10 @@ html {
   margin: auto;
 }
 
+.base-contents.type-gray {
+  background-color: white;
+}
+
 #anchor_inquiryForm>.base-contents__inner {
   max-width: 100%;
   padding: 0;
