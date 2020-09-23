@@ -29,6 +29,10 @@ html {
   padding: 0;
 }
 
+.wgt-form__body {
+  padding-top: 0;
+}
+
 article.resp .submit_btn input {
   background-color: #727d39;
   border-radius: 30px;
