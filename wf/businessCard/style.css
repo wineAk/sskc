@@ -451,6 +451,7 @@ article.resp .required+.input input[type="radio"]::before {
   right: 0;
   z-index: 1;
   text-align: center;
+  display: none;
 }
 
 .modal-close {
