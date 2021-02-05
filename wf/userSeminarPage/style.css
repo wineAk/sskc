@@ -97,6 +97,11 @@ strong.marker_c {
   display: none;
 }
 
+#breadcrumb,
+.second_mv.second_mv04 {
+  display: none;
+}
+
 .wgt-heading__inner_sub {
   max-width: 1000px;
   margin: 0 auto;
@@ -159,6 +164,22 @@ div#pano {
   border: 0;
   height: 0;
   border-bottom: 1px solid #DCDCDC;
+}
+
+article.resp li:first-child input {
+  margin-right: 15px;
+  width: 145px;
+}
+article.resp li:first-child span {
+  font-size: 0;
+}
+#seminar_form p {
+  margin: 1em;
+}
+@media screen and (max-width: 768px) {
+  article.resp li:first-child .span_9 > span {
+    display: block;
+  }
 }
 
 /* 「問い合わせ先」用 */
