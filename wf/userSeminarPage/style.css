@@ -203,9 +203,11 @@ article.resp li:first-child span {
 }
 
 /* 文字色 */
+/*
 html, table th, table td {
   color: #2a2a2a;
 }
+*/
 
 /************************************
 ** モバイル対応
