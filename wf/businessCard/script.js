@@ -5,13 +5,13 @@ $(function() {
     //if (inputVal) match = inputVal;
     //var imgMatch = $('body > div > img').attr('src').match(/(wf[0-9]+)/);
     //if (imgMatch) match = imgMatch[1];
-    $('head > script').each(function() {
-      var src = $(this).attr('src');
-      if (!src) return;
-      var srcMatch = src.match(/(wf[0-9]+)/);
-      if (srcMatch) match = srcMatch[1];
-    });
-    if (match === '') return;
+    //$('head > script').each(function() {
+    //  var src = $(this).attr('src');
+    //  if (!src) return;
+    //  var srcMatch = src.match(/(wf[0-9]+)/);
+    //  if (srcMatch) match = srcMatch[1];
+    //});
+    //if (match === '') return;
     var url = 'https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=https%3A%2F%2Fsecure-link.jp%2Fwf%2F%3Fc%3D' + match;
     $('.modal-image').attr('src', url);
     $('.modal').css('display', 'block');
