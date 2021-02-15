@@ -1,10 +1,10 @@
 $(function() {
   var weFormModal = function() {
-    var match = '';
+    var match = WEBFORMID;
     var inputVal = $('input[type=hidden][name="c"]').val();
     if (inputVal) match = inputVal;
-    var imgMatch = $('body > div > img').attr('src').match(/(wf[0-9]+)/);
-    if (imgMatch) match = imgMatch[1];
+    //var imgMatch = $('body > div > img').attr('src').match(/(wf[0-9]+)/);
+    //if (imgMatch) match = imgMatch[1];
     $('head > script').each(function() {
       var src = $(this).attr('src');
       if (!src) return;
