@@ -303,7 +303,7 @@ article.resp .required+.input input[type="radio"]::before {
 }
 
 .card-title {
-  width: 140px;
+  width: 150px;
   padding: 0.8em;
   margin: 1rem auto;
   text-align: center;
@@ -383,8 +383,8 @@ article.resp .required+.input input[type="radio"]::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border: 2px solid #727D39;
   border-radius: 5px;
   color: #727D39;
