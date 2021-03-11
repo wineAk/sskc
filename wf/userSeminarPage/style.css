@@ -151,9 +151,11 @@ div#pano {
   color: #00496D;
 }
 
+/*
 #seminar_form a:visited {
   color: #6A1435;
 }
+*/
 
 #seminar_form p {
   margin: 1em;
@@ -233,6 +235,22 @@ html, table th, table td {
   color: #2a2a2a;
 }
 */
+
+/* Zoom */
+div.zoom {
+  color: #abb2bf;
+  background: #282c34;
+  margin: 1em 0px;
+  padding: 0.3em;
+  font-size: 1em;
+  display: block;
+  text-align: center;
+}
+
+div.zoom br {
+  display: none;
+}
+
 /************************************
 ** モバイル対応
 **
