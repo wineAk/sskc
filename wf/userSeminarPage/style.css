@@ -176,6 +176,8 @@ div#pano {
 #seminar_form table {
   border-top-style: none;
   border-collapse: collapse;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #seminar_form table th {
