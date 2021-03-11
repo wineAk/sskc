@@ -88,6 +88,7 @@ strong.marker_c {
 **
 ************************************/
 /*@import url('https://wineak.github.io/sskc/wf/userSeminarPage/materialize.css');*/
+
 /************************************
 ** その他
 **
@@ -146,8 +147,28 @@ div#pano {
 }
 
 /* 各種微調整 */
+#seminar_form a {
+  color: #00496D;
+}
+
+#seminar_form a:visited {
+  color: #6A1435;
+}
+
+#seminar_form p {
+  margin: 1em;
+}
+
 #seminar_form dl {
   margin: 0;
+}
+
+#seminar_form ul {
+  margin: 1em;
+}
+
+#seminar_form li {
+  list-style: disc;
 }
 
 #seminar_form table {
@@ -157,6 +178,11 @@ div#pano {
 
 #seminar_form table th {
   width: 200px;
+}
+
+#seminar_form table p {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #seminar_form hr {
@@ -170,14 +196,13 @@ article.resp li:first-child input {
   margin-right: 15px;
   width: 145px;
 }
+
 article.resp li:first-child span {
   font-size: 0;
 }
-#seminar_form p {
-  margin: 1em;
-}
+
 @media screen and (max-width: 768px) {
-  article.resp li:first-child .span_9 > span {
+  article.resp li:first-child .span_9>span {
     display: block;
   }
 }
@@ -208,7 +233,6 @@ html, table th, table td {
   color: #2a2a2a;
 }
 */
-
 /************************************
 ** モバイル対応
 **
@@ -460,7 +484,6 @@ article.resp input[type="radio"] {
 
 /* Edge*/
 @supports (-ms-ime-align: auto) {
-
   article.resp input[type="checkbox"],
   article.resp input[type="radio"] {
     border: none;
