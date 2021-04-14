@@ -128,6 +128,11 @@ strong.marker_c {
   text-align: center;
 }
 
+/* タイトルの調整 */
+.hero-text > span {
+  line-height: 1;
+}
+
 /* パノラマ */
 .tour {
   margin-top: 10px;
@@ -167,6 +172,12 @@ div#pano {
 
 #seminar_form ul {
   margin: 1em;
+  margin-left: 2em;
+}
+
+#seminar_form table ul {
+  margin: 1em;
+  margin-left: 1em;
 }
 
 #seminar_form li {
