@@ -154,6 +154,7 @@ div#pano {
 /* 各種微調整 */
 #seminar_form a {
   color: #00496D;
+  text-decoration: underline;
 }
 
 /*
