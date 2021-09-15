@@ -1,185 +1,15 @@
-/************************************
-** Webフォーム周り
-**
-************************************/
-html {
-  background-color: #f2f1f1;
-}
+:root {
+  --header-main-color: #f6f6f6;
+  --header-sub-color: #ccc;
 
-.base-page {
-  background-color: #f2f1f1;
-}
+  --modal-main-color: #e0edff;
+  --modal-sub-color: #555;
 
-.base-main {
-  padding: 3.1em;
-}
+  --card-main-color: #727D39;
+  --card-sub-color: #fff;
 
-.base-contents {
-  max-width: 1000px;
-  background-color: white;
-  margin: auto;
-}
-
-.base-contents.type-gray {
-  background-color: white;
-}
-
-#anchor_inquiryForm>.base-contents__inner {
-  max-width: 100%;
-  padding: 0;
-}
-
-.wgt-form {
-  padding: 0;
-}
-
-.wgt-form__body {
-  padding-top: 0;
-}
-
-article.resp .submit_btn input {
-  background-color: #727d39;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  .base-page {
-    margin-top: 0;
-  }
-
-  .base-main {
-    padding: 3.1em 0;
-  }
-
-  .base-contents__inner {
-    padding: 0;
-  }
-}
-
-/************************************
-** UIのデザイン
-**
-************************************/
-/* チェックボックス・ラジオボタン */
-article.resp input[type="checkbox"],
-article.resp input[type="radio"] {
-  background: #fff;
-  outline: 0;
-  vertical-align: middle;
-}
-
-/* ラジオボタン */
-article.resp input[type="radio"] {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin-bottom: 0;
-  margin-right: 0.5rem;
-  border: 1px solid #d4d1cf;
-  border-radius: 50%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-article.resp input[type="radio"]::before {
-  position: absolute;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  content: '';
-  background: #80a34a;
-  border-radius: 50%;
-  -webkit-transform: scale(0, 0);
-  transform: scale(0, 0);
-}
-
-article.resp input[type="radio"]:checked::before {
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
-  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
-}
-
-/************************************
-** 項目必須＆入力時のフォーカス
-**
-************************************/
-article.resp form li.clr label.col.span_3,
-article.resp form li.clr div.col.span_9 {
-  width: 100%;
-  margin: 4px 0 0 40px;
-  padding-right: 80px;
-}
-
-article.resp form li label.span_3.required {
-  position: relative;
-}
-
-.required::before {
-  position: absolute;
-  top: 0;
-  left: -40px;
-  content: "必須";
-  background: rgba(201, 36, 47, 0.1);
-  color: #c9242f;
-  font-size: 12px;
-  padding: 2px 5px;
-  margin-right: 5px;
-}
-
-@media screen and (max-width: 48em) {
-  .required::before {
-    top: -5px;
-  }
-}
-
-article.resp form li.clr label.col.span_3.required:after {
-  content: "";
-}
-
-/* フォーカス周り */
-article.resp input,
-article.resp textarea,
-article.resp select {
-  border: 1px solid #c5c5c5;
-  border-radius: 4px;
-  outline: none;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  transition-property: box-shadow;
-}
-
-article.resp input:focus,
-article.resp textarea:focus,
-article.resp select:focus {
-  box-shadow: 0 0 8px #c5c5c5;
-}
-
-article.resp .required+.input input,
-article.resp .required+.input textarea,
-article.resp .required+div.col.span_9 select {
-  border-color: #c9242f;
-}
-
-article.resp .required+.input input:focus,
-article.resp .required+.input textarea:focus,
-article.resp .required+.input select:focus {
-  box-shadow: 0 0 8px #c9242f;
-}
-
-.wgt-form input[type="checkbox"]:checked:after {
-  width: 6px;
-  height: 12px;
-}
-
-article.resp .required+.input input[type="checkbox"]:checked:after {
-  border-color: #c9242f;
-}
-
-article.resp .required+.input input[type="radio"]::before {
-  background: #c9242f;
+  --file-main-color: #44397D;
+  --file-sub-color: #fff;
 }
 
 /************************************
@@ -200,8 +30,8 @@ article.resp .required+.input input[type="radio"]::before {
   text-align: left;
   vertical-align: inherit;
   width: 100%;
-  background-color: #f6f6f6;
-  border-left: 6px solid #ccc;
+  background-color: var(--header-main-color);
+  border-left: 6px solid var(--header-sub-color);
   font-size: 22px;
   margin: 30px 0 15px 0;
   padding: .5em .75em;
@@ -308,10 +138,10 @@ article.resp .required+.input input[type="radio"]::before {
   margin: 1rem auto;
   text-align: center;
   text-decoration: none;
-  color: #727D39;
-  border: 2px solid #727D39;
+  color: var(--card-main-color);
+  border: 2px solid var(--card-main-color);
   border-radius: 5px;
-  background: #fff;
+  background: var(--card-sub-color);
   font-weight: bold;
   transition: transform ease .3s;
 }
@@ -346,10 +176,10 @@ article.resp .required+.input input[type="radio"]::before {
 
 .card-dl {
   display: block;
-  color: #fff;
+  color: var(--file-sub-color);
   border: 0;
   border-radius: 30px;
-  background: #44397D;
+  background: var(--file-main-color);
   text-decoration: none;
 }
 
@@ -385,9 +215,9 @@ article.resp .required+.input input[type="radio"]::before {
   justify-content: center;
   width: 140px;
   height: 140px;
-  border: 2px solid #727D39;
+  border: 2px solid var(--card-main-color);
   border-radius: 5px;
-  color: #727D39;
+  color: var(--card-main-color);
   font-weight: bold;
   padding: 1rem;
   margin: 1rem;
@@ -399,7 +229,7 @@ article.resp .required+.input input[type="radio"]::before {
 }
 
 .radio-title svg {
-  fill: #727D39;
+  fill: var(--card-main-color);
   margin: 0.5rem;
 }
 
@@ -408,14 +238,14 @@ article.resp .required+.input input[type="radio"]::before {
 }
 
 .radio-button:checked+.radio-title {
-  background-color: #727D39;
-  border: 2px solid #727D39;
-  color: white;
+  background-color: var(--card-main-color);
+  border: 2px solid var(--card-main-color);
+  color: var(--card-sub-color);
   transform: scale(1.1, 1.1);
 }
 
 .radio-button:checked+.radio-title svg {
-  fill: white;
+  fill: var(--card-sub-color);
 }
 
 #input-text-container {
@@ -426,8 +256,8 @@ article.resp .required+.input input[type="radio"]::before {
 
 @media screen and (max-width: 768px) {
   .radio-title {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     font-size: 12px;
     padding: .5rem;
   }
@@ -460,7 +290,7 @@ article.resp .required+.input input[type="radio"]::before {
   margin: 10px;
   padding-bottom: 5px;
   width: 40px;
-  height: 40px;
+  height: 35px;
   border-radius: 50%;
   z-index: 1;
   background-color: #fff;
@@ -484,9 +314,9 @@ article.resp .required+.input input[type="radio"]::before {
   padding: 1.5em;
   min-width: 120px;
   max-width: 100%;
-  color: #555;
+  color: var(--modal-sub-color);
   font-size: 16px;
-  background: #e0edff;
+  background: var(--modal-main-color);
   border-radius: 15px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -500,7 +330,7 @@ article.resp .required+.input input[type="radio"]::before {
   left: 50%;
   margin-left: -45px;
   border: 45px solid transparent;
-  border-top: 45px solid #e0edff;
+  border-top: 45px solid var(--modal-main-color);
 }
 */
 .modal-balloon p {
@@ -541,10 +371,10 @@ article.resp form li.clr.input-card div.col.span_9 {
 }
 
 .file-ui {
-  color: #fff;
+  color: var(--file-sub-color);
   font-weight: bold;
   font-size: 18px;
-  background: #44397D;
+  background: var(--file-main-color);
   padding: 8px 0;
   border-radius: 30px;
   max-width: 240px;
@@ -567,6 +397,7 @@ article.resp form li.clr div.col.span_9 label {
 .file-container input {
   width: 0px;
   opacity: 0;
+  border: 1px solid #fff;
 }
 
 .file-container span {
