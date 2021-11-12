@@ -54,8 +54,8 @@ $(function() {
     var txt = (i === 0) ? '表面' : '裏面';
     $(this).attr('accept', 'image/*'); // */
     $(this).wrap('<label for="' + id + '" class="file-container">');
+    $(this).before('<p>選択されていません</p>');
     $(this).before('<div class="file-ui">名刺の「' + txt + '」を撮る</div>');
-    $(this).after('<span>選択されていません</span>');
     $(this).parent().before('<img id="img' + id + '" src="">');
   });
   $('.form_list li').each(function() {

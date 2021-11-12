@@ -397,7 +397,7 @@ article.resp form li.clr div.col.span_9 label {
   border: 1px solid #fff;
 }
 
-.file-container span {
+.file-container p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
