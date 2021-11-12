@@ -99,7 +99,7 @@ $(function() {
     if (!this.files.length) return;
     var id = $(this).attr('id');
     var fileName = $(this).prop('files')[0];
-    $(this).next().text(fileName.name);
+    $(this).prev().text(fileName.name);
     var reader = new FileReader();
     reader.onload = function(e) {
       $('#img' + id).attr('src', reader.result);
