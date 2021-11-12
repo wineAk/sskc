@@ -1,6 +1,34 @@
-<script src="//files.saaske.com/document/business_card/kuramoto_card.js"></script>
-<script src="//wineak.github.io/sskc/wf/businessCard/script.js?data=202009231340"></script>
-<link rel="stylesheet" href="//wineak.github.io/sskc/wf/businessCard/style.css?data=202009231340">
+<script>
+  var COMPANY = "株式会社インターパーク";
+  var DEPARTMENT = "営業部";
+  var POSITION = "部長";
+  var NAME = "倉本 明仁";
+  var EMAIL = "kuramoto@interpark.co.jp";
+  var TEL = "03-3496-7888";
+  var FAX = "03-3496-7899";
+  var ZIP = "150-0043";
+  var ADDRESS = "東京都 渋谷区 道玄坂 2丁目16番8号";
+  var BUILDING = "ビジネスヴィップ渋谷・道玄坂坂本ビル8階";
+  var URL = "http://www.interpark.co.jp";
+  var ICON_URL = "https://files.secure-link.jp/u3/c00029295/kuramoto_icon.png";
+  var CARD_URL = "https://files.secure-link.jp/u3/c00029295/kuramoto_card.jpg";
+</script>
+<script src="//wineak.github.io/sskc/wf/businessCard/script.js?data=202111121615"></script>
+<link rel="stylesheet" href="//wineak.github.io/sskc/wf/businessCard/style.css?data=202111121615">
+<style>
+:root {
+  --header-main-color: #f6f6f6;
+  --header-sub-color: #ccc;
+  --modal-main-color: #e0edff;
+  --modal-sub-color: #555;
+  --card-main-color: #727D39;
+  --card-sub-color: #fff;
+  --file-main-color: #44397D;
+  --file-sub-color: #fff;
+}
+</style>
+
+
 
 <div class="modal">
   <span class="modal-close">×</span>
@@ -11,86 +39,7 @@
   </div>
 </div>
 
-<div class="header-container">
-  <div class="header-inner">
-    <img src="https://files.saaske.com/document/business_card/kuramoto_icon.jpg" class="header-face">
-    <div class="header-profile">
-      <p class="header-company">株式会社インターパーク</p>
-      <p class="header-position">東京事業本部 第1ユニット <br>マネージャー</p>
-      <p class="header-name">倉本 明仁</p>
-    </div>
-  </div>
-</div>
-
-<div class="card-container">
-  <div class="card-inner">
-    <div class="card-image">
-      <img src="https://files.saaske.com/document/business_card/kuramoto_card.jpg">
-      <a class="card-title card-dl">
-        名刺画像を保存
-      </a>
-    </div>
-    <div class="card-table">
-      <table>
-        <tr>
-          <th>会社名</th>
-          <td>株式会社インターパーク</td>
-        </tr>
-        <tr>
-          <th>部署</th>
-          <td>東京事業本部 第1ユニット</td>
-        </tr>
-        <tr>
-          <th>役職</th>
-          <td>マネージャー</td>
-        </tr>
-        <tr>
-          <th>名前</th>
-          <td>倉本 明仁</td>
-        </tr>
-        <tr>
-          <th>E-mail</th>
-          <td>kuramoto&#x40;interpark.co.jp</td>
-        </tr>
-      </table>
-      <table id="tableToggle">
-        <tr>
-          <th>電話番号</th>
-          <td>03-3496-7888</td>
-        </tr>
-        <tr>
-          <th>FAX</th>
-          <td>03-3496-7899</td>
-        </tr>
-        <tr>
-          <th>郵便番号</th>
-          <td>150-0043</td>
-        </tr>
-        <tr>
-          <th>住所</th>
-          <td>東京都 渋谷区 道玄坂 2丁目16番8号</td>
-        </tr>
-        <tr>
-          <th>ビル名</th>
-          <td>ビジネスヴィップ渋谷・道玄坂坂本ビル8階</td>
-        </tr>
-        <tr>
-          <th>ホームページ</th>
-          <td>http://www.interpark.co.jp</td>
-        </tr>
-      </table>
-      <div class="card-open">
-        <div class="card-title">
-          <span>↓</span> 詳細を開く <span>↓</span>
-        </div>
-      </div>
-      <div class="card-close">
-        <div class="card-title">
-          <span>↑</span> 詳細を閉じる <span>↑</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div id="card-root">
 </div>
 
 <div class="header-container radio-header-container">

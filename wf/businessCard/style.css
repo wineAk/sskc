@@ -1,13 +1,10 @@
 :root {
   --header-main-color: #f6f6f6;
   --header-sub-color: #ccc;
-
   --modal-main-color: #e0edff;
   --modal-sub-color: #555;
-
   --card-main-color: #727D39;
   --card-sub-color: #fff;
-
   --file-main-color: #44397D;
   --file-sub-color: #fff;
 }
@@ -345,7 +342,7 @@
 
 @media screen and (max-width: 768px) {
   .modal {
-    display: none!important;
+    display: none !important;
   }
 }
 
