@@ -180,6 +180,10 @@
   text-decoration: none;
 }
 
+.card-title.card-dl {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .card-inner {
     display: block;
