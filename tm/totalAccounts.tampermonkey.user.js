@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         サスケ・アカウント数を出す！
 // @namespace    https://my.saaske.com/
-// @version      0.1
+// @version      0.2
 // @description  none
 // @author       wineAk
-// @match        https://my.saaske.com/*/cgi/index.cgi?task=report
+// @match        https://my.saaske.com/*/cgi/index.cgi?task=report*
 // @grant        none
 // ==/UserScript==
 
