@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         月額表チェック
+// @name         月額表チェック（Sales）
 // @namespace    https://my.saaske.com/
 // @version      0.1
 // @description  none
