@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         月額表チェック（管理画面）
 // @namespace    https://my.saaske.com/
-// @version      0.1
+// @version      0.2
 // @description  none
 // @author       wineAk
 // @match        https://*.saaske.com/*/cgi/index.cgi?task=bill*
@@ -11,13 +11,11 @@
 (() => {
     const params = location.search.substring(1).split('&')
     const button = document.createElement('button')
-    if (params.includes('task=bill') && params.includes('action=cti') || params.includes('action=scan')) {
+    if (params.includes('task=bill') && params.includes('bl_kind=1') || params.includes('bl_kind=2')) {
         button.textContent = 'TSV取得'
         button.onclick = _ => navigator.clipboard.writeText(getTsvData()).then(_ => alert('TSVをコピーしました'))
         document.querySelector('#contents > .tab_box').appendChild(button)
-    } else if (params.includes('task=bill') && params.includes('action=print')) {
-        // don't process
-    } else if (params.includes('task=bill')) {
+    } else if (params.includes('task=bill') && params.length == 1 || params.includes('tab=1')) {
         button.textContent = 'JSON取得'
         button.onclick = _ => navigator.clipboard.writeText(getJsonData()).then(_ => alert('JSONをコピーしました'))
         document.querySelector('#contents > .tab_box').appendChild(button)
@@ -35,7 +33,7 @@
     const getTsvData = _ => {
         let tsv = ''
         document.querySelectorAll('#contents > table > tbody > .pickup').forEach(elm => {
-            const amount = Math.round(Number(elm.querySelector('td:nth-child(6)').textContent.replace(/[\\,]/g, '')))
+            const amount = Math.round(Number(elm.querySelector('td:nth-child(4)').textContent.replace(/[\\,]/g, '')))
             const company = elm.querySelector('td:first-child > a:first-child').textContent
             tsv += `${company}	${amount}\n`
         })
