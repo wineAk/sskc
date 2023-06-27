@@ -12,6 +12,26 @@
     const titleElm = document.querySelector('#contents > table:nth-child(4) > caption')
     const errorElm = document.querySelector('#contents > table:nth-child(4) > tbody > tr:nth-child(4) > td')
     if (!errorElm) return
+
+    // エラー文章だけ抽出する処理
+    const errorArray = errorElm.innerText.split('\n').filter(word => word.match(/^(\s+)?$/) == null) // 空欄は削除
+    console.log('errorArray:', errorArray)
+    const errorFilterArray = errorArray.filter(word => {
+         // 日付、送信元ドメインがある場合配列は削除
+        if (word.match(/\d{4} \d{2}:\d{2}:\d{2}/) || word.match(/\.saaske\.com/) ) return false
+        return true
+    })
+    console.log('errorFilterArray:', errorFilterArray)
+    const errorCode = errorFilterArray.filter(word => word.match(/\d{3}[ -]#?\d{1,3}\.\d{1,3}\.\d{1,3}/))
+    const errorCodeParent = errorFilterArray.filter(word => word.match(/\d{3}/))
+    const errorCodeChild = errorFilterArray.filter(word => word.match(/\d{1,3}\.\d{1,3}\.\d{1,3}/))
+    console.log('errorCode:', errorCode[0])
+    console.log('errorCodeParent:', errorCodeParent[0])
+    console.log('errorCodeChild:', errorCodeChild[0])
+
+    //const tableElm = `` 
+    //document.querySelector('#contents').insertBefore( tableElm, document.querySelector('#contents > table'))
+
     const errorTxt = errorElm.textContent.replace(/\n/g, ' ').replace(/\n/g, ' ').replace(/ +/g, ' ')
     console.log('errorTxt:', errorTxt)
     const errorCause =
