@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         月額表チェック（管理画面）
 // @namespace    https://my.saaske.com/
-// @version      0.2
+// @version      0.3
 // @description  none
 // @author       wineAk
 // @match        https://*.saaske.com/*/cgi/index.cgi?task=bill*
@@ -15,7 +15,7 @@
         button.textContent = 'TSV取得'
         button.onclick = _ => navigator.clipboard.writeText(getTsvData()).then(_ => alert('TSVをコピーしました'))
         document.querySelector('#contents > .tab_box').appendChild(button)
-    } else if (params.includes('task=bill') && params.length == 1 || params.includes('tab=1')) {
+    } else if (params.includes('task=bill') && params.length == 1 || params.includes('tab=1') || params.includes('action=')) {
         button.textContent = 'JSON取得'
         button.onclick = _ => navigator.clipboard.writeText(getJsonData()).then(_ => alert('JSONをコピーしました'))
         document.querySelector('#contents > .tab_box').appendChild(button)
