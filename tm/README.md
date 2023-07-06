@@ -1,4 +1,7 @@
 - https://wineak.github.io/sskc/tm/accountCreate.tampermonkey.user.js
-- https://wineak.github.io/sskc/tm/directlinkCopy.tampermonkey.user.js
+- directlinkCopy.tampermonkey.user.js
+- https://wineak.github.io/sskc/tm/errorMailCheck.tampermonkey.user.js
 - https://wineak.github.io/sskc/tm/favicon.tampermonkey.user.js
+- https://wineak.github.io/sskc/tm/getAdminAmount.tampermonkey.user.js
+- https://wineak.github.io/sskc/tm/getSalseAmount.tampermonkey.user.js
 - https://wineak.github.io/sskc/tm/totalAccounts.tampermonkey.user.js
