@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         エラーメールチェック（管理画面）
 // @namespace    https://my.saaske.com/
-// @version      0.3
+// @version      1.0
 // @description  none
 // @author       wineAk
 // @match        https://*.saaske.com/*/cgi/index.cgi?task=return_mail&action=detail&rm_code=*
@@ -17,8 +17,8 @@
     const errorArray = errorElm.innerText.split('\n').filter(word => word.match(/^(\s+)?$/) == null) // 空欄は削除
     console.log('errorArray:', errorArray)
     const errorFilterArray = errorArray.filter(word => {
-         // 日付、送信元ドメインがある場合配列は削除
-        if (word.match(/\d{4} \d{2}:\d{2}:\d{2}/) || word.match(/\.saaske\.com/) ) return false
+        // 日付、送信元ドメインがある場合配列は削除
+        if (word.match(/\d{4} \d{2}:\d{2}:\d{2}/) || word.match(/\.saaske\.com/)) return false
         return true
     })
     console.log('errorFilterArray:', errorFilterArray)
@@ -28,9 +28,14 @@
     console.log('errorCode:', errorCode[0])
     console.log('errorCodeParent:', errorCodeParent[0])
     console.log('errorCodeChild:', errorCodeChild[0])
-
-    //const tableElm = `` 
-    //document.querySelector('#contents').insertBefore( tableElm, document.querySelector('#contents > table'))
+    const tableParentElm = document.createElement('div')
+    let tableElm = '<table cellspacing="1" cellpadding="2" border="0" class="table_detail"><caption align="top">エラー解析</caption><tbody>'
+    tableElm += `<tr><th>errorCode</th><td>${errorCode[0]}</td></tr>`
+    tableElm += `<tr><th>errorCodeParent</th><td>${errorCodeParent[0]}</td></tr>`
+    tableElm += `<tr><th>errorCodeChild</th><td>${errorCodeChild[0]}</td></tr>`
+    tableElm += '</tbody></table>'
+    tableParentElm.innerHTML = tableElm
+    document.querySelector('#contents > table').after(tableParentElm.firstElementChild)
 
     const errorTxt = errorElm.textContent.replace(/\n/g, ' ').replace(/\n/g, ' ').replace(/ +/g, ' ')
     console.log('errorTxt:', errorTxt)
