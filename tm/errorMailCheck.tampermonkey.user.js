@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         エラーメールチェック（管理画面）
 // @namespace    https://my.saaske.com/
-// @version      0.2
+// @version      0.3
 // @description  none
 // @author       wineAk
 // @match        https://*.saaske.com/*/cgi/index.cgi?task=return_mail&action=detail&rm_code=*
@@ -45,6 +45,7 @@
         (/554 Mail from .* rejected for policy reasons/i.test(errorTxt)) ? '[554] ポリシー上の理由で拒否されました' :
         (/\(expanded from \): This address no longer accepts mail/i.test(errorTxt)) ? 'メールを受け付けなくなりました' :
         (/Permission denied/i.test(errorTxt)) ? 'アクセス拒否されました' :
+        (/has been blocked/i.test(errorTxt)) ? 'ブロックされました' :
         // 相手方の問題
         (/452[ -]4.2.2/.test(errorTxt)) ? '[452 4.2.2] 受信者のアカウント容量がオーバー' :
         (/552[ -]5.2.2/.test(errorTxt)) ? '[552 5.2.2] 受信者のアカウント容量がオーバー' :
@@ -58,6 +59,7 @@
         (/501[ -]unacceptable/.test(errorTxt)) ? '※ [501 unacceptable mail address] 受け入れ不可能なメールアドレス' :
         (/\(expanded from \): mail is not deliverable/i.test(errorTxt)) ? 'メールが配信できません' :
         // メアドが存在しないケース
+        (/the domain .* couldn't be found/i.test(errorTxt)) ? 'ドメインが見つかりませんでした' :
         (/This user doesn't have a .* account/i.test(errorTxt)) ? '該当アカウントを持っていません' :
         (/\(expanded from \): User unknown/i.test(errorTxt)) ? '不明なユーザー' :
         (/\(expanded from (<.+>)?\): unknown user/i.test(errorTxt)) ? '不明なユーザー' :
