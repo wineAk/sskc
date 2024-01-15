@@ -2,7 +2,7 @@
 // @name         ファビコン変更するよ
 // @namespace    http://tampermonkey.net/
 // @namespace    https://my.saaske.com/
-// @version      0.1
+// @version      0.2
 // @description  none
 // @author       wineAk
 // @match        https://*.saaske.com/*
@@ -16,15 +16,22 @@
     let num = 0
     let timer = null
     const FAVICON = {
-        "admin": "https://wineak.github.io/sskc/redirect/admin.png",
-        "lead": "https://wineak.github.io/sskc/redirect/lead.png",
-        "sfa": "https://wineak.github.io/sskc/redirect/salse.png",
-        "web": "https://wineak.github.io/sskc/redirect/web.png",
-        "cgibin2": "https://wineak.github.io/sskc/redirect/cgi-bin2.png",
-        "technology": "https://wineak.github.io/sskc/redirect/technology.png",
-        "cti": "https://wineak.github.io/sskc/redirect/cti.png",
-        "cti_call": "https://wineak.github.io/sskc/redirect/cti_call.png",
-        "works": "https://wineak.github.io/sskc/redirect/works.png",
+        // main
+        "admin": "admin",
+        "lead": "lead",
+        "sfa": "salse",
+        "telapo": "telapo",
+        "works": "works",
+        // option
+        "web": "web",
+        "tracking": "tracking",
+        "cti": "cti",
+        "cti_call": "cti_call",
+        "scan": "scan",
+        "api": "api",
+        // cgi
+        "cgibin2": "cgi-bin2",
+        "technology": "technology",
     }
     const replaceFavicon = (elms, favicon) => {
         for (let i = 0, n = elms.length; i < n; i++) elms[i].href = favicon
@@ -70,5 +77,5 @@
         'favicon': favicon,
     }
     console.log(log)
-    if (favicon) faviconCheck(favicon)
+    if (favicon) faviconCheck(`https://wineak.github.io/sskc/redirect/${favicon}.png`)
 })()
