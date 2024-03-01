@@ -4,4 +4,5 @@
 - https://wineak.github.io/sskc/tm/favicon.tampermonkey.user.js
 - https://wineak.github.io/sskc/tm/getAdminAmount.tampermonkey.user.js
 - https://wineak.github.io/sskc/tm/getSalseAmount.tampermonkey.user.js
+- https://wineak.github.io/sskc/tm/projectsClickScroll.tampermonkey.user.js
 - https://wineak.github.io/sskc/tm/totalAccounts.tampermonkey.user.js
