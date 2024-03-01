@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 (() => {
-  const projectsElms = document.querySelectorAll('.projects_detail')
+  const projectsElms = document.querySelectorAll('[rel="projects_detail"]')
   if (projectsElms == null) return
   const opt = { top: 0, behavior: 'smooth' }
   projectsElms.forEach(e => e.addEventListener('click', _ => window.scroll(opt)))
