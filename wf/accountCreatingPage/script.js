@@ -279,6 +279,7 @@ $(window).load(function() {
     automaticCalculation(); // 自動計算処理
   });
   // メールアドレス
+  $(`[name=${target['sales_person_email']}]`).val('@interpark.co.jp') // 初期値
   $(`[name=${target['sales_person']}]`).on('change', function() {
     const val = $(this).val();
     const match = val.match(/<(.*)>/)
