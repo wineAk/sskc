@@ -281,8 +281,10 @@ $(window).load(function() {
   // メールアドレス
   $(`[name=${target['sales_person']}]`).on('change', function() {
     const val = $(this).val();
-    const txt = email[val];
-    const mail = `${txt}@interpark.co.jp`;
+    const match = val.match(/<(.*)>/)
+    const mail = (match == null) ? '@interpark.co.jp' : match[1]
+    //const txt = email[val];
+    //const mail = `${txt}@interpark.co.jp`;
     $(`[name=${target['sales_person_email']}]`).val(mail);
   });
   // 数字
