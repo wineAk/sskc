@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         サポート案件に色を付ける（Sales）
 // @namespace    https://my.saaske.com/
-// @version      0.1
+// @version      0.2
 // @description  none
 // @author       wineAk
 // @match        https://my.saaske.com/*
@@ -16,6 +16,7 @@
     projectsElms.forEach(elm => {
         const text = elm.innerText
         const isTarget = (_=>{
+            if (/^\[完了\]/.test(text)) return false
             if (/(サスケ|職人).*?(サポート|ｻﾎﾟｰﾄ)/.test(text)) return true
             if (/(サポート|ｻﾎﾟｰﾄ).*?(サスケ|職人)/.test(text)) return true
             return false
