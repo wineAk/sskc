@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         月額表チェック（管理画面）
 // @namespace    https://my.saaske.com/
-// @version      0.4
+// @version      0.5
 // @description  none
 // @author       wineAk
 // @match        https://*.saaske.com/*/cgi/index.cgi?task=bill*
@@ -24,9 +24,11 @@
         const givenDate = elm.innerText
         // 今日の日付から、先月末を作成
         const today = new Date()
-        today.setMonth(today.getMonth() - 1)
-        today.setDate(new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate())
-        const lastDate = today.toISOString().split('T')[0]
+        const lastDayOfLastMonth = new Date(today.getFullYear(), today.getMonth(), 0)
+        const yyyy = lastDayOfLastMonth.getFullYear()
+        const mm = String(lastDayOfLastMonth.getMonth() + 1).padStart(2, '0') // 月は0始まり
+        const dd = String(lastDayOfLastMonth.getDate()).padStart(2, '0')
+        const lastDate = `${yyyy}-${mm}-${dd}`;
         // 先月じゃないのは赤くする
         if (givenDate !== lastDate) {
           elm.style.background = '#ffc5c5'
